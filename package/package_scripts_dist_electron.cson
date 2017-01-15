@@ -1,0 +1,304 @@
+
+#
+# See package.cson for more information
+#
+
+#=====================
+    'electron-dist': '
+        node node_modules/electron-prebuilt/cli.js
+            dist/electron/main.js
+    '
+
+#=====================
+    'electron-dev': '
+        node node_modules/electron-prebuilt/cli.js
+            src/electron/main.js
+            dev
+    '
+
+
+#=====================
+# This is a "shortcut" task for quick build+dist'ing the Chrome extension
+    'electron': '
+
+        npm run clean
+        &&
+        npm run versioning
+        &&
+        npm run genPluginsConfig
+        &&
+        npm run
+            build:scripts:single:CHROMEAPP
+            --readium-js-viewer:RJS_UGLY=no
+        &&
+        npm run
+            build:scripts:single:CHROMEAPPWORKER
+            --readium-js-viewer:RJS_UGLY=no
+        &&
+        npm run mkdirp
+            dist
+        &&
+        npm run mkdirp
+            dist/cloud-reader/css
+        &&
+        npm run dist:cssoptimize --
+            "src/css/library.css"
+            "-o" "dist/cloud-reader/css/readium-all.css"
+        &&
+        npm run dist:electron
+        &&
+        npm run rimraf
+            dist/cloud-reader
+        &&
+        npm run deploy:electron:copy:sourcemap
+        &&
+        npm run rimraf
+            dist/electron_sourcemap
+    '
+
+#=====================
+    'predist:electron': '
+
+        npm run rimraf
+            dist/electron
+        &&
+        npm run rimraf
+            dist/electron_sourcemap
+    '
+
+#=====================
+    'dist:electron': '
+
+        npm run dist:electron:copy
+        &&
+        npm run dist:electron:copy:fonts
+        &&
+        npm run dist:electron:css
+        &&
+        npm run dist:electron:js
+    '
+#        &&
+#        node build-config/updateChromeManifest.js
+
+#=====================
+    'dist:electron:copy': '
+
+        npm run mkdirp
+            dist/electron/scripts/zip
+        &&
+        npm run mkdirp
+            dist/electron/scripts/mathjax
+        &&
+        npm run cpy
+            src/chrome-app/index.html
+            dist/electron/
+        &&
+        npm run cpy
+            src/electron/main.js
+            dist/electron/
+        &&
+        npm run cpy
+            readium-js/node_modules/zip-js/WebContent/z-worker.js
+            dist/electron/scripts/zip
+        &&
+        npm run cpy
+            readium-js/node_modules/zip-js/WebContent/deflate.js
+            dist/electron/scripts/zip
+        &&
+        npm run cpy
+            readium-js/node_modules/zip-js/WebContent/inflate.js
+            dist/electron/scripts/zip
+        &&
+        npm run ncp
+            src/images/
+            dist/electron/images/
+        &&
+        npm run cpy
+            node_modules/mathjax-single-file/dist/MMLSVG/MathJax.js
+            dist/electron/scripts/mathjax
+        &&
+        npm run ncp
+            node_modules/bootstrap/fonts/
+            dist/electron/fonts/
+        &&
+        npm run cpy
+            src/css/annotations.css
+            dist/electron/css/
+        &&
+        npm run cpy
+            src/chrome-app/epubReadingSystem.js
+            dist/electron/scripts/
+        &&
+        npm run ncp
+            src/chrome-app/icons/
+            dist/electron/icons/
+    '
+
+#        npm run cpy
+#            src/electron/requirejs-config.js
+#            dist/electron/scripts/
+#        &&
+#        npm run cpy
+#            src/chrome-app/background.js
+#            dist/electron/scripts/
+#        &&
+#        npm run ncp
+#            src/i18n/_locales/
+#            dist/electron/_locales/
+#        &&
+#        npm run cpy
+#            src/chrome-app/manifest.json
+#            dist/electron/
+
+#=====================
+    'dist:electron:copy:fonts': '
+        npm run ncp
+            src/fonts/
+            dist/electron/font-faces/
+    '
+
+#=====================
+    'dist:electron:css': '
+
+        npm run cpy
+            dist/cloud-reader/css/readium-all.css
+            dist/electron/css/
+    '
+
+#=====================
+    'dist:electron:js': '
+
+        npm run mkdirp
+            dist/electron_sourcemap
+        &&
+        npm run cpy
+            build-output/_single-bundle/readium-js-viewer_all_CHROMEAPP.js
+            dist/electron/scripts/
+        &&
+        npm run cpy
+            build-output/_single-bundle/readium-js-viewer_all_CHROMEAPP.js.map
+            dist/electron_sourcemap/
+        &&
+        npm run cpy
+            build-output/_single-bundle/readium-js-viewer_CHROMEAPP-WORKER.js
+            dist/electron/scripts/
+        &&
+        npm run cpy
+            build-output/_single-bundle/readium-js-viewer_CHROMEAPP-WORKER.js.map
+            dist/electron_sourcemap/
+    '
+
+#        node node_modules/uglify-js/bin/uglifyjs
+#            --compress
+#            --mangle
+#            --screw-ie8
+#            --source-map
+#            dist/electron_sourcemap/readium-js-viewer_all_CHROMEAPP-min.js.map
+#            --source-map-url
+#            readium-js-viewer_all_CHROMEAPP-min.js.map
+#            --xxxxsource-map-root
+#            readium-js-viewer_all_CHROMEAPP-min.js
+#            -o
+#            dist/electron/scripts/readium-js-viewer_all_CHROMEAPP-min.js
+#            --in-source-map
+#            build-output/_single-bundle/readium-js-viewer_all_CHROMEAPP.js.map
+#            --
+#            build-output/_single-bundle/readium-js-viewer_all_CHROMEAPP.js
+
+
+#=====================
+    'precordova-android-common': '
+
+        npm run electron
+    '
+
+#=====================
+    'cordova-android-common': '
+
+        npm run mkdirp
+            build-output/cordova
+        &&
+        npm run ncp
+            src/cordova/
+            build-output/cordova/
+        &&
+        npm run ncp
+            dist/electron/
+            build-output/cordova/www/
+        &&
+        npm run cpy
+            build-output/cordova/index.html
+            build-output/cordova/www/
+        &&
+        npm run rimraf
+            build-output/cordova/index.html
+        &&
+        cd build-output/cordova/
+        &&
+        cordova platform add android@5.0.0
+        &&
+        cordova plugin add https://github.com/apache/cordova-plugin-file.git
+    '
+    
+#=====================
+    'precordova-android': '
+
+        npm run cordova-android-common
+    '
+    
+#=====================
+    'cordova-android': '
+
+        cd build-output/cordova/
+        &&
+        cordova build android
+        &&
+        cd ../..
+        &&
+        npm run mkdirp
+            dist/cordova-android
+        &&
+        npm run cpy
+            build-output/cordova/platforms/android/build/outputs/apk/android-debug.apk
+            dist/cordova-android/
+        &&
+        adb devices
+        &&
+        adb install -r dist/cordova-android/android-debug.apk
+    '
+#cordova plugin add cordova-plugin-file
+
+
+#=====================
+    'precordova-android-Xwalk': '
+
+        npm run cordova-android-common
+    '
+    
+#=====================
+    'cordova-android-Xwalk': '
+
+        cd build-output/cordova/
+        &&
+        cordova plugin add cordova-plugin-crosswalk-webview
+        &&
+        cordova build android
+        &&
+        cd ../..
+        &&
+        npm run mkdirp
+            dist/cordova-android
+        &&
+        npm run cpy
+            build-output/cordova/platforms/android/build/outputs/apk/android-x86-debug.apk
+            dist/cordova-android/
+        &&
+        npm run cpy
+            build-output/cordova/platforms/android/build/outputs/apk/android-armv7-debug.apk
+            dist/cordova-android/
+        &&
+        adb devices
+        &&
+        adb install -r dist/cordova-android/android-armv7-debug.apk
+    '
+    

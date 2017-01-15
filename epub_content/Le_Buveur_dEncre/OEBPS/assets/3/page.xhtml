@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!-- NAMESPACE: START -->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:epub="http://www.idpf.org/2007/ops" 
+	  xmlns:ev="http://www.w3.org/2001/xml-events"
+	  xmlns:ibooks="http://apple.com/ibooks/html-extensions"
+	  >
+<!-- NAMESPACE: END -->
+<!-- HEADERS: START -->
+	<head>
+		<meta name="generator" content="PubCoder 2.4.4.712 for OS X" />
+		<meta charset="utf-8"/>
+    	<title>3</title>
+		<meta name="viewport" content="width=768, height=1024" /> 
+<!-- GENERAL STYLES: START -->		
+		<link rel="stylesheet" type="text/css" href="../../css/general.styles.css" />
+<!-- GENERAL STYLES: END -->
+<!-- PAGE STYLES: START -->		
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		
+
+
+<!-- PAGE STYLES: END -->
+<!-- GENERAL JAVASCRIPTS: START -->		
+		<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/spritespin.js"></script>
+<script type="text/javascript" src="../../js/spritespin.mod-360.js"></script>
+<script type="text/javascript" src="../../js/spritespin.api.js"></script>
+<script type="text/javascript" src="../../js/jquery.jgestures.js"></script> 
+<script type="text/javascript" src="../../js/jquery.ui.js"></script>	
+<script type="text/javascript" src="../../js/jquery.touchpunch.js"></script>
+<script type='text/javascript' src='../../js/jquery.scrollTo-min.js'></script>
+<script type='text/javascript' src='../../js/jquery.easie-min.js'></script>
+<script type='text/javascript' src='../../js/jquery.move.js'></script>
+<script type='text/javascript' src='../../js/jquery.SCswipe.js'></script>
+<script type='text/javascript' src='../../js/jquery-css-transform.js'></script>
+<script type='text/javascript' src='../../js/jquery-animate-css-rotate-scale.js'></script>
+<script type='text/javascript' src='../../js/jquery.animate-shadow-min.js'></script>
+<script type="text/javascript" src="../../js/jquery.panzoom.min.js"></script>
+<script type="text/javascript" src="../../js/remodal.js"></script>
+<script type="text/javascript" src="../../js/general.functions.js"></script>
+<script type="text/javascript" src="../../js/pubcoder.js"></script>
+<script type="text/javascript" src="../../js/shake.js"></script>
+<script type="text/javascript" src="../../js/unmask.js"></script>
+<script type="text/javascript" src="../../js/idangerous.swiper-2.3.js"></script>
+<script type="text/javascript" src="../../js/photogallery.js"></script>
+<script type="text/javascript" src="../../js/quiz-multi.js"></script>
+<script type="text/javascript" src="../../js/drawer.js"></script>
+<script type="text/javascript" src="../../js/flood_fill.js"></script>
+<script type="text/javascript" src="../../js/scw_widgets.js"></script>
+<script type="text/javascript" src="../../js/scw_panzoom.js"></script>
+<script type="text/javascript" src="../../js/scw_memory_game.js"></script>
+
+<!-- GENERAL JAVASCRIPTS: END -->
+<!-- CUSTOM HEADERS: START -->		
+		
+<script type="text/javascript"><![CDATA[
+/* TITRE UNIQUE POUR IDENTIFIER LE LIVRE */
+    var IDlivre = "BuveuR";
+    var pageTitle = 'page' + $('title').text();
+    var namePageTitle = IDlivre + pageTitle;
+    
+    /* VARIABLES BEQUILLES ON/OFF */
+    var nameContrasteON = IDlivre + "contrasteON";
+    var nameAerationON = IDlivre + "aerationON";
+    var nameTrameLignesON = IDlivre + "trameLignesON";
+    var nameTrameRhesesON = IDlivre + "trameRhesesON";
+    var nameSyllabesON = IDlivre + "syllabesON";
+    var namePhonemesON = IDlivre + "phonemesON";
+    var namePonctuationON = IDlivre + "ponctuationON";
+    var namePopUpON = IDlivre + "popUpON";
+    var nameSuiviAudioON = IDlivre + "suiviAudioON";
+    var nameSuiviSilenceON = IDlivre + "suiviSilenceON";
+    var nameNarrationON = IDlivre + "narrationON";
+    var nameMarqueLigneON = IDlivre + "marqueLigneON";
+    var namePageApageON = IDlivre + "pageApageON";
+    window[namePageTitle] = localStorage[namePageTitle] || 0;
+            if (localStorage[namePageTitle] === undefined) {
+              localStorage[namePageTitle] = 0;
+            } else {
+              window[namePageTitle] = localStorage[namePageTitle];
+            }
+                
+    /* Si le contraste est activé sur la page = background foncé */
+    window[nameContrasteON] = localStorage[nameContrasteON] || "false";
+            if (localStorage[nameContrasteON] === undefined) {
+              localStorage[nameContrasteON] = "false";
+            } else {
+              window[nameContrasteON] = localStorage[nameContrasteON];
+            }
+            
+    window[nameAerationON] = localStorage[nameAerationON] || "true";
+            if (localStorage[nameAerationON] === undefined) {
+              localStorage[nameAerationON] = "true";
+            } else {
+              window[nameAerationON] = localStorage[nameAerationON];
+            }
+    /* Si la trame lignes est activée sur la page = stripe */
+    window[nameTrameLignesON] = localStorage[nameTrameLignesON] || "false";
+            if (localStorage[nameTrameLignesON] === undefined) {
+              localStorage[nameTrameLignesON] = "false";
+            } else {
+              window[nameTrameLignesON] = localStorage[nameTrameLignesON];
+            }
+        
+    /* Si la trame rhèses est activée sur la page */
+    window[nameTrameRhesesON] = localStorage[nameTrameRhesesON] || "false";
+            if (localStorage[nameTrameRhesesON] === undefined) {
+              localStorage[nameTrameRhesesON] = "false";
+            } else {
+              window[nameTrameRhesesON] = localStorage[nameTrameRhesesON];
+            }           
+    /* Si la colorisation des syllabes est activée sur la page */
+    window[nameSyllabesON] = localStorage[nameSyllabesON] || "false";
+            if (localStorage[nameSyllabesON] === undefined) {
+              localStorage[nameSyllabesON] = "false";
+            } else {
+              window[nameSyllabesON] = localStorage[nameSyllabesON];
+            }    
+            
+    /* Si la colorisation des phonèmes est activée sur la page */
+    window[namePhonemesON] = localStorage[namePhonemesON] || "false";
+            if (localStorage[namePhonemesON] === undefined) {
+              localStorage[namePhonemesON] = "false";
+            } else {
+              window[namePhonemesON] = localStorage[namePhonemesON];
+            } 
+    /* Si la colorisation de la ponctuation est activée sur la page */
+    window[namePonctuationON] = localStorage[namePonctuationON] || "false";
+            if (localStorage[namePonctuationON] === undefined) {
+              localStorage[namePonctuationON] = "false";
+            } else {
+              window[namePonctuationON] = localStorage[namePonctuationON];
+            }
+    /* Si l'option pop-up est activée sur la page */
+    window[namePopUpON] = localStorage[namePopUpON] || "false";
+            if (localStorage[namePopUpON] === undefined) {
+              localStorage[namePopUpON] = "false";
+            } else {
+              window[namePopUpON] = localStorage[namePopUpON];
+            }
+    /* Si le suivi rhèse + audio est activé sur la page */
+    window[nameSuiviAudioON] = localStorage[nameSuiviAudioON] || "true";
+            if (localStorage[nameSuiviAudioON] === undefined) {
+              localStorage[nameSuiviAudioON] = "true";
+            } else {
+              window[nameSuiviAudioON] = localStorage[nameSuiviAudioON];
+            }
+            
+    /* Si le suivi rhèse silencieux est activé sur la page */
+    window[nameSuiviSilenceON] = localStorage[nameSuiviSilenceON] || "false";
+            if (localStorage[nameSuiviSilenceON] === undefined) {
+              localStorage[nameSuiviSilenceON] = "false";
+            } else {
+              window[nameSuiviSilenceON] = localStorage[nameSuiviSilenceON];
+            }
+      
+    /* Si la narration humaine est activée sur la page */
+    window[nameNarrationON] = localStorage[nameNarrationON] || "false";
+            if (localStorage[nameNarrationON] === undefined) {
+              localStorage[nameNarrationON] = "false";
+            } else {
+              window[nameNarrationON] = localStorage[nameNarrationON];
+            }
+            
+/* ######## Nouvelles variables ######## */
+    /* Si le marquage de la ligne est activé sur la page */
+    window[nameMarqueLigneON] = localStorage[nameMarqueLigneON] || "false";
+            if (localStorage[nameMarqueLigneON] === undefined) {
+              localStorage[nameMarqueLigneON] = "false";
+            } else {
+              window[nameMarqueLigneON] = localStorage[nameMarqueLigneON];
+            }
+    /* Si le page à page est activé sur la page */
+    window[namePageApageON] = localStorage[namePageApageON] || "true";
+            if (localStorage[namePageApageON] === undefined) {
+              localStorage[namePageApageON] = "true";
+            } else {
+              window[namePageApageON] = localStorage[namePageApageON];
+            }
+/* Taille font min/max */
+    var nameFontMin = IDlivre + "fontMin";
+    localStorage.setItem(nameFontMin, "15");
+    var nameFontMax = IDlivre + "fontMax";
+    localStorage.setItem(nameFontMax, "22");
+    /* police font */
+    
+    var nameFont = IDlivre + "font";
+    var nameFontTaille = IDlivre + "fontTaille";
+    
+    window[nameFont] = localStorage[nameFont] || "Arial";
+                if (localStorage[nameFont] === undefined) {
+                  localStorage[nameFont] = "Arial";
+                } else {
+                  window[nameFont] = localStorage[nameFont];
+                }
+    window[nameFontTaille] = localStorage[nameFontTaille] || "18";
+                if (localStorage[nameFontTaille] === undefined) {
+                  localStorage[nameFontTaille] = "18";
+                  window[nameFontTaille] = localStorage[nameFontTaille];
+                }
+    /* Pour aller-retour Réglages */
+    var nameFromPage = IDlivre + "fromPage";
+    window[nameFromPage] = localStorage[nameFromPage] || "0";
+                if (localStorage[nameFromPage] === undefined) {
+                  localStorage[nameFromPage] = "0";
+                } else {
+                  window[nameFromPage] = localStorage[nameFromPage];
+                }
+    /* Pour aller-retour Sommaire */
+    var nameFromPageSommaire = IDlivre + "fromPageSommaire";
+    window[nameFromPageSommaire] = localStorage[nameFromPageSommaire] || "0";
+                if (localStorage[nameFromPageSommaire] === undefined) {
+                  localStorage[nameFromPageSommaire] = "0";
+                } else {
+                  window[nameFromPageSommaire] = localStorage[nameFromPageSommaire];
+                }
+    
+    /* VARIABLES BEQUILLES */
+    var nameContraste = IDlivre + "contraste";
+    var nameAeration = IDlivre + "aeration";
+    var nameTrameLignes = IDlivre + "trameLignes";
+    var nameTrameRheses = IDlivre + "trameRheses";
+    var nameSyllabes = IDlivre + "syllabes";
+    var namePhonemes = IDlivre + "phonemes";
+    var namePonctuation = IDlivre + "ponctuation";
+    var namePopUp = IDlivre + "popUp";
+    var nameSuiviAudio = IDlivre + "suiviAudio";
+    var nameSuiviSilence = IDlivre + "suiviSilence";
+    var nameNarration = IDlivre + "narration";
+    var nameMarqueLigne = IDlivre + "marqueLigne";
+    var namePageApage = IDlivre + "pageApage";
+    var namePolice = IDlivre + "police";
+    var nameZoom = IDlivre + "zoom";
+    var nameDezoom = IDlivre + "dezoom";
+    var nameVide1 = IDlivre + "vide1";
+    var nameVide2 = IDlivre + "vide2";
+    var nameVide3 = IDlivre + "vide3";
+    var nameVide4 = IDlivre + "vide4";
+    window[nameContraste] = localStorage[nameContraste] || 2;
+                if (localStorage[nameContraste] === undefined) {
+                  localStorage[nameContraste] = 2;
+                } else {
+                  window[nameContraste] = localStorage[nameContraste];
+                }
+    window[nameAeration] = localStorage[nameAeration] || 10;
+                if (localStorage[nameAeration] === undefined) {
+                  localStorage[nameAeration] = 10;
+                } else {
+                  window[nameAeration] = localStorage[nameAeration];
+                }
+    window[nameTrameLignes] = localStorage[nameTrameLignes] || 1;
+                if (localStorage[nameTrameLignes] === undefined) {
+                  localStorage[nameTrameLignes] = 1;
+                } else {
+                  window[nameTrameLignes] = localStorage[nameTrameLignes];
+                }
+    window[nameTrameRheses] = localStorage[nameTrameRheses] || 11;
+                if (localStorage[nameTrameRheses] === undefined) {
+                  localStorage[nameTrameRheses] = 11;
+                } else {
+                  window[nameTrameRheses] = localStorage[nameTrameRheses];
+                }
+    window[nameSyllabes] = localStorage[nameSyllabes] || 7;
+                if (localStorage[nameSyllabes] === undefined) {
+                  localStorage[nameSyllabes] = 7;
+                } else {
+                  window[nameSyllabes] = localStorage[nameSyllabes];
+                }
+    window[namePhonemes] = localStorage[namePhonemes] || 6;
+                if (localStorage[namePhonemes] === undefined) {
+                  localStorage[namePhonemes] = 6;
+                } else {
+                  window[namePhonemes] = localStorage[namePhonemes];
+                }
+    window[namePonctuation] = localStorage[namePonctuation] || 8;
+                if (localStorage[namePonctuation] === undefined) {
+                  localStorage[namePonctuation] = 8;
+                } else {
+                  window[namePonctuation] = localStorage[namePonctuation];
+                }
+    window[namePopUp] = localStorage[namePopUp] || 9;
+                if (localStorage[namePopUp] === undefined) {
+                  localStorage[namePopUp] = 9;
+                } else {
+                  window[namePopUp] = localStorage[namePopUp];
+                }
+    window[nameSuiviAudio] = localStorage[nameSuiviAudio] || 3;
+                if (localStorage[nameSuiviAudio] === undefined) {
+                  localStorage[nameSuiviAudio] = 3;
+                } else {
+                  window[nameSuiviAudio] = localStorage[nameSuiviAudio];
+                }
+    window[nameSuiviSilence] = localStorage[nameSuiviSilence] || 4;
+                if (localStorage[nameSuiviSilence] === undefined) {
+                  localStorage[nameSuiviSilence] = 4;
+                } else {
+                  window[nameSuiviSilence] = localStorage[nameSuiviSilence];
+                }
+    window[nameNarration] = localStorage[nameNarration] || 12;
+                if (localStorage[nameNarration] === undefined) {
+                  localStorage[nameNarration] = 12;
+                } else {
+                  window[nameNarration] = localStorage[nameNarration];
+                }
+    window[nameMarqueLigne] = localStorage[nameMarqueLigne] || 5;
+                if (localStorage[nameMarqueLigne] === undefined) {
+                  localStorage[nameMarqueLigne] = 5;
+                } else {
+                  window[nameMarqueLigne] = localStorage[nameMarqueLigne];
+                }
+    window[namePageApage] = localStorage[namePageApage] || 18;
+                if (localStorage[namePageApage] === undefined) {
+                  localStorage[namePageApage] = 18;
+                } else {
+                  window[namePageApage] = localStorage[namePageApage];
+                }
+    window[namePolice] = localStorage[namePolice] || 13;
+                if (localStorage[namePolice] === undefined) {
+                  localStorage[namePolice] = 13;
+                } else {
+                  window[namePolice] = localStorage[namePolice];
+                }
+    window[nameZoom] = localStorage[nameZoom] || 14;
+                if (localStorage[nameZoom] === undefined) {
+                  localStorage[nameZoom] = 14;
+                } else {
+                  window[nameZoom] = localStorage[nameZoom];
+                }
+    window[nameDezoom] = localStorage[nameDezoom] || 15;
+                if (localStorage[nameDezoom] === undefined) {
+                  localStorage[nameDezoom] = 15;
+                } else {
+                  window[nameDezoom] = localStorage[nameDezoom];
+                }
+    window[nameVide1] = localStorage[nameVide1] || 16;
+                if (localStorage[nameVide1] === undefined) {
+                  localStorage[nameVide1] = 16;
+                } else {
+                  window[nameVide1] = localStorage[nameVide1];
+                }
+    window[nameVide2] = localStorage[nameVide2] || 17;
+                if (localStorage[nameVide2] === undefined) {
+                  localStorage[nameVide2] = 17;
+                } else {
+                  window[nameVide2] = localStorage[nameVide2];
+                }
+    window[nameVide3] = localStorage[nameVide3] || 19;
+                if (localStorage[nameVide3] === undefined) {
+                  localStorage[nameVide3] = 19;
+                } else {
+                  window[nameVide3] = localStorage[nameVide3];
+                }
+    window[nameVide4] = localStorage[nameVide4] || 20;
+                if (localStorage[nameVide4] === undefined) {
+                  localStorage[nameVide4] = 20;
+                } else {
+                  window[nameVide4] = localStorage[nameVide4];
+                }
+/* Réglages actuels pour comparatif avec le profil et savoir si upgrade de Ma Version */
+var regCourant = {
+    font:window[nameFont],
+    fontTaille:window[nameFontTaille],
+    
+    contraste:window[nameContraste],
+    contrasteON:window[nameContrasteON],
+    
+    aeration:window[nameAeration],
+    aerationON:window[nameAerationON],
+    
+    trameLignes:window[nameTrameLignes],
+    trameLignesON:window[nameTrameLignesON],
+    
+    trameRheses:window[nameTrameRheses],
+    trameRhesesON:window[nameTrameRhesesON],
+    
+    syllabes:window[nameSyllabes],
+    syllabesON:window[nameSyllabesON],
+    
+    phonemes:window[namePhonemes],
+    phonemesON:window[namePhonemesON],
+    
+    ponctuation:window[namePonctuation],
+    ponctuationON:window[namePonctuationON],
+    
+    popUp:window[namePopUp],
+    popUpON:window[namePopUpON],
+    
+    suiviAudio:window[nameSuiviAudio],
+    suiviAudioON:window[nameSuiviAudioON],
+    
+    suiviSilence:window[nameSuiviSilence],
+    suiviSilenceON:window[nameSuiviSilenceON],
+    
+    narration:window[nameNarration],
+    narrationON:window[nameNarrationON],
+    
+    marqueLigne: window[nameMarqueLigne],
+    marqueLigneON:window[nameMarqueLigneON],
+    
+    police:window[namePolice],
+    zoom:window[nameZoom],
+    dezoom:window[nameDezoom],
+    
+    pageApage:window[namePageApage],
+    pageApageON:window[namePageApageON],
+    
+    vide1:window[nameVide1],
+    vide2:window[nameVide2],
+    vide3:window[nameVide3],
+    vide4:window[nameVide4]
+};
+var grilleReglagesX = {
+    1:108,
+    2:218,
+    3:328,
+    4:438,
+    5:548,
+    6:108,
+    7:218,
+    8:328,
+    9:438,
+    10:548,
+    11:108,
+    12:218,
+    13:328,
+    14:438,
+    15:548,
+    16:108,
+    17:218,
+    18:328,
+    19:438,
+    20:548,
+};
+var grilleReglagesY = {
+    1:350,
+    2:350,
+    3:350,
+    4:350,
+    5:350,
+    6:512,
+    7:512,
+    8:512,
+    9:512,
+    10:512,
+    11:674,
+    12:674,
+    13:674,
+    14:674,
+    15:674,
+    16:836,
+    17:836,
+    18:836,
+    19:836,
+    20:836
+};
+var grilleTiroirX = {
+    1:149,
+    2:245,
+    3:341,
+    4:437,
+    5:533,
+    6:149,
+    7:245,
+    8:341,
+    9:437,
+    10:533,
+    11:149,
+    12:245,
+    13:341,
+    14:437,
+    15:533,
+    16:149,
+    17:245,
+    18:341,
+    19:437,
+    20:533,
+};
+var grilleTiroirY = {
+    1:1095,
+    2:1095,
+    3:1095,
+    4:1095,
+    5:1095,
+    6:1191,
+    7:1191,
+    8:1191,
+    9:1191,
+    10:1191,
+    11:1287,
+    12:1287,
+    13:1287,
+    14:1287,
+    15:1287,
+    16:1383,
+    17:1383,
+    18:1383,
+    19:1383,
+    20:1383
+};
+function debugIcon () {
+    dfr = $.Deferred();
+    $('.pictoReglages').each (function(i) {
+        var y = i + 1;
+        var searchABS = $('.pictoReglages.' + y).length;
+        if (searchABS === 0) {
+            //alert('bug absent : ' + y);
+            var numABS = y;
+            $('.pictoReglages').each (function(i) {
+                var z = i + 1;
+                var searchTROP = $('.pictoReglages.' + z).length;
+                if (searchTROP > 1) {
+                    //alert('bug doublon : ' + z);
+                    var bequille = $('.pictoReglages.' + z).eq(0).attr('class').split(' ')[3].replace('-icon','');
+                    window[IDlivre + bequille] = numABS;
+                    localStorage[IDlivre + bequille] = window[IDlivre + bequille];
+                    $('.' + bequille + '-icon').addClass('' + numABS).removeClass('' + z);
+                    var bequille2 = $('.pictoReglages.' + z).eq(0).attr('class').split(' ')[3].replace('-icon','');
+                    window[IDlivre + bequille2] = z;
+                    localStorage[IDlivre + bequille2] = window[IDlivre + bequille2];
+                    var regCourant = {
+                        font:window[nameFont],
+                        fontTaille:window[nameFontTaille],
+                        
+                        contraste:window[nameContraste],
+                        contrasteON:window[nameContrasteON],
+                        
+                        aeration:window[nameAeration],
+                        aerationON:window[nameAerationON],
+                        
+                        trameLignes:window[nameTrameLignes],
+                        trameLignesON:window[nameTrameLignesON],
+                        
+                        trameRheses:window[nameTrameRheses],
+                        trameRhesesON:window[nameTrameRhesesON],
+                        
+                        syllabes:window[nameSyllabes],
+                        syllabesON:window[nameSyllabesON],
+                        
+                        phonemes:window[namePhonemes],
+                        phonemesON:window[namePhonemesON],
+                        
+                        ponctuation:window[namePonctuation],
+                        ponctuationON:window[namePonctuationON],
+                        
+                        popUp:window[namePopUp],
+                        popUpON:window[namePopUpON],
+                        
+                        suiviAudio:window[nameSuiviAudio],
+                        suiviAudioON:window[nameSuiviAudioON],
+                        
+                        suiviSilence:window[nameSuiviSilence],
+                        suiviSilenceON:window[nameSuiviSilenceON],
+                        
+                        narration:window[nameNarration],
+                        narrationON:window[nameNarrationON],
+                        
+                        marqueLigne: window[nameMarqueLigne],
+                        marqueLigneON:window[nameMarqueLigneON],
+                        
+                        police:window[namePolice],
+                        zoom:window[nameZoom],
+                        dezoom:window[nameDezoom],
+                        
+                        pageApage:window[namePageApage],
+                        pageApageON:window[namePageApageON],
+                        
+                        vide1:window[nameVide1],
+                        vide2:window[nameVide2],
+                        vide3:window[nameVide3],
+                        vide4:window[nameVide4]
+                    };
+                    $('.' + bequille + '-icon').css ({ 'top' : grilleReglagesY[regCourant[bequille]], 'left' : grilleReglagesX[regCourant[bequille]] });
+                    return dfr.promise();
+                    return false;
+                }
+            });
+        }
+    });
+}
+function echangeIcone (i, bequille) {
+    var numEmplacementListe = $('.' + bequille + '-icon').attr('class').split(' ')[4];
+    $('.pictoReglages.' + i).addClass(numEmplacementListe).removeClass(i);
+    $('.' + bequille + '-icon').addClass(i).removeClass(numEmplacementListe);
+    window[IDlivre + bequille] =  i;
+    localStorage[IDlivre + bequille] = window[IDlivre + bequille];
+    $('.pictoReglages.' + i).animate({
+        left: grilleReglagesX[i],
+        top: grilleReglagesY[i]
+    }, 250, function() {
+        $('.' + bequille + '-icon').removeClass('dropNow').css('z-index','1');
+    });
+    $('.pictoReglages.' + numEmplacementListe).addClass('dropNow').css('z-index','');
+    var classBequilleOldFavori = $('.pictoReglages.' + numEmplacementListe).attr('class').split(' ')[3].replace('-icon','');
+    window[IDlivre + classBequilleOldFavori] =  numEmplacementListe;
+    localStorage[IDlivre + classBequilleOldFavori] = window[IDlivre + classBequilleOldFavori];
+    
+    $('.pictoReglages.' + numEmplacementListe).animate({
+        left: grilleReglagesX[numEmplacementListe],
+        top: grilleReglagesY[numEmplacementListe]
+    }, 750, function() {
+        $('.pictoReglages.' + numEmplacementListe).removeClass('dropNow');
+        debugIcon();
+    });
+}
+function retourIconeNochange (bequille) {
+    var numNoChange = $('.' + bequille + '-icon').attr('class').split(' ')[4];
+    $('.pictoReglages.' + numNoChange).animate({
+        left: grilleReglagesX[numNoChange],
+        top: grilleReglagesY[numNoChange]
+    }, 500, function() {
+        $('.' + bequille + '-icon').removeClass('dropNow');
+        debugIcon();
+    });
+}
+]]></script>
+<script>
+$( document ).ready(function() {
+    $('.SCContent').attr('id', 'mobidys');
+    $('.pinch-text').attr('id', 'textArea');
+    $('.pinch-text .SCTextContainer').addClass('textContainer');
+    
+    $('.chapArea').attr('id', 'chapArea');
+    $('.chapHeader').attr('id', 'chapHeader');
+    $('#chapHeader').appendTo('#chapArea');
+    
+    $('.line').appendTo('.textBackground');
+    
+    $('.textBackground, .line, .popups').attr('id','');
+    
+    $('.textMark').attr('id', 'textMark');
+    $('#textMark').appendTo('.textContainer');
+    $('#textMark').attr('class', '').attr('style','');
+    
+    $('.textBackground').insertBefore('.textSrc');
+    $('.popups').appendTo('.textContainer');
+    
+    $('.popups').attr('id', 'popups').attr('class','');
+    $('.pastille-empty').appendTo('#popups').attr('id','').attr('class','pastille-img');
+    $('.pastille-img img').attr('id','').attr('class','pastille-height');
+    $('.suiviPage').addClass('pageNumbers');
+    $('.suiviPage').appendTo('#mobidys');
+    
+    $('.pinch-text').appendTo('#chapArea');
+    $('.tirette').appendTo('#chapHeader');
+    $('.menu-tirette').appendTo('#chapHeader');
+    
+    $('.textShadow').attr('id', 'textShadow');;
+    $('#chapArea').append($('#textShadow'));
+});
+</script>
+<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles-perso.css"/>
+    <script src="js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="js/book.js" type="text/javascript"></script>
+    <script src="js/context.js" type="text/javascript"></script>
+    <script src="js/options.js" type="text/javascript"></script>
+    <script src="js/chapter.js" type="text/javascript"></script>
+    <script src="js/loader.js" type="text/javascript"></script>
+    <script src="js/utils.js" type="text/javascript"></script>
+<!-- CUSTOM HEADERS: END -->
+<!-- HEADERS: END -->	
+<!-- NAVIGATION JAVASCRIPTS: START -->		
+		
+<!-- NAVIGATION JAVASCRIPTS: END -->	
+<!-- ACTIONS: START -->		
+		<script type="text/javascript" src="actions.js"></script>	  		 
+<!-- ACTIONS: END -->			 
+    </head>
+    <body>
+    	<div class="remodal" data-remodal-id="SCDefaultAlert" role="dialog" aria-labelledby="SCDefaultAlertTitle" aria-describedby="SCDefaultAlertMsg">
+			<button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+	  		<div>
+	    		<h2 id="SCDefaultAlertTitle">Remodal</h2>
+	    		<p id="SCDefaultAlertMsg">
+	      			Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative state notation and hash tracking.
+	      		</p>
+			</div>
+		  	<br/>
+		  	<button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+		</div>
+		
+		<div class="SCPage SCPage3" dir="ltr">
+<!-- OVERLAY: START -->
+			<div class="SCOverlay SCOverlay3">
+				
+<div id="obj13689" class="SCPageObject SCGestureRecognizer menu-tirette roue clic"   ></div>
+<div id="obj13695" class="SCPageObject SCGestureRecognizer menu-tirette maison clic"   ></div>
+<div id="obj13704" class="SCPageObject SCGestureRecognizer hide-menu"   ></div>
+<div id="obj13710" class="SCPageObject SCRectangle panneau-menu"   ></div>
+<div id="obj13721" class="SCPageObject SCGestureRecognizer panneau-menu"   ></div>
+<div id="obj14156" class="SCPageObject SCGestureRecognizer popupHide"   ></div>
+<div id="obj14152" class="SCPageObject SCActionListContainer"   ></div>
+<div id="obj13718" class="SCPageObject SCImage panneau-menu"  >
+<img id="obj13718_img" src="../images/obj13718_image.png"  />
+</div>
+<div id="obj13729" class="SCPageObject SCImage icone-menu ponctuation-icon"  >
+<img id="obj13729_img" src="../images/Ponctuation-2.png"  />
+</div>
+<div id="obj13737" class="SCPageObject SCImage icone-menu contraste-icon"  >
+<img id="obj13737_img" src="../images/Contraste-2.png"  />
+</div>
+<div id="obj13745" class="SCPageObject SCImage icone-menu trameLignes-icon"  >
+<img id="obj13745_img" src="../images/Lignes-2.png"  />
+</div>
+<div id="obj13753" class="SCPageObject SCImage icone-menu aeration-icon"  >
+<img id="obj13753_img" src="../images/Espace-2.png"  />
+</div>
+<div id="obj13761" class="SCPageObject SCImage icone-menu trameRheses-icon"  >
+<img id="obj13761_img" src="../images/Unite_sens.png"  />
+</div>
+<div id="obj13769" class="SCPageObject SCImage icone-menu phonemes-icon"  >
+<img id="obj13769_img" src="../images/Phonemes-2.png"  />
+</div>
+<div id="obj13777" class="SCPageObject SCImage icone-menu syllabes-icon"  >
+<img id="obj13777_img" src="../images/Syllabes-2.png"  />
+</div>
+<div id="obj13785" class="SCPageObject SCImage icone-menu popUp-icon"  >
+<img id="obj13785_img" src="../images/Definitions-2.png"  />
+</div>
+<div id="obj13793" class="SCPageObject SCImage icone-menu narration-icon"  >
+<img id="obj13793_img" src="../images/Audio-2.png"  />
+</div>
+<div id="obj13801" class="SCPageObject SCImage icone-menu suiviAudio-icon"  >
+<img id="obj13801_img" src="../images/Soutien_audio.png"  />
+</div>
+<div id="obj13809" class="SCPageObject SCImage icone-menu suiviSilence-icon"  >
+<img id="obj13809_img" src="../images/Fenetre_lecture.png"  />
+</div>
+<div id="obj13817" class="SCPageObject SCImage icone-menu marqueLigne-icon"  >
+<img id="obj13817_img" src="../images/Marque_ligne.png"  />
+</div>
+<div id="obj13825" class="SCPageObject SCImage icone-menu police-icon"  >
+<img id="obj13825_img" src="../images/Chgt_police.png"  />
+</div>
+<div id="obj13834" class="SCPageObject SCImage icone-menu zoom-icon"  >
+<img id="obj13834_img" src="../images/Zoom%2B.png"  />
+</div>
+<div id="obj13842" class="SCPageObject SCImage icone-menu dezoom-icon"  >
+<img id="obj13842_img" src="../images/Zoom-.png"  />
+</div>
+<div id="obj13850" class="SCPageObject SCImage icone-menu pageApage-icon"  >
+<img id="obj13850_img" src="../images/Page_par_page.png"  />
+</div>
+<div id="obj13858" class="SCPageObject SCImage icone-menu vide1-icon"  >
+<img id="obj13858_img" src="../images/Zone_vide-2.png"  />
+</div>
+<div id="obj13864" class="SCPageObject SCImage icone-menu vide2-icon"  >
+<img id="obj13864_img" src="../images/Zone_vide-2.png"  />
+</div>
+<div id="obj13870" class="SCPageObject SCImage icone-menu vide3-icon"  >
+<img id="obj13870_img" src="../images/Zone_vide-2.png"  />
+</div>
+<div id="obj13876" class="SCPageObject SCImage icone-menu vide4-icon"  >
+<img id="obj13876_img" src="../images/Zone_vide-2.png"  />
+</div>
+<div id="obj13882" class="SCPageObject SCImage panneau-menu"  >
+<img id="obj13882_img" src="../images/Picto_Outils.png"  />
+</div>
+<div id="obj14094" class="SCPageObject SCImage pastille-empty"  >
+<img id="obj14094_img" src="../images/obj14094_image.png"  />
+</div>
+
+<div id="obj13702" class="SCPageObject SCText suiviPage"   >
+	<div id="obj13702_content" class="SCTextContainer SCTextVAlignTop">
+<p style="text-align: center;"><span class="currentPage">0</span>/<span class="totalPages">0</span></p>
+	</div>
+</div>
+<div id="obj13687" class="SCPageObject SCSmartObject menu-tirette roue"   >
+	<svg version="1.1" id="Calque_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="26.252px" height="26.252px" viewBox="0 0 26.252 26.252" enable-background="new 0 0 26.252 26.252" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="26.252" height="26.252"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#9F9E9E" d="M13.125,17.941c-2.597,0-4.703-2.156-4.703-4.815
+		c0-2.66,2.106-4.814,4.703-4.814c2.598,0,4.703,2.154,4.703,4.814C17.828,15.785,15.724,17.941,13.125,17.941 M26.188,14.44
+		c0.041-0.433,0.063-0.871,0.063-1.314c0-0.444-0.022-0.882-0.063-1.313l-2.726-0.73c-0.166-0.886-0.438-1.733-0.801-2.527
+		l1.785-2.229c-0.437-0.76-0.943-1.471-1.512-2.126l-2.623,1.051c-0.632-0.604-1.335-1.131-2.098-1.562l0.166-2.879
+		C17.604,0.462,16.789,0.19,15.942,0l-1.521,2.43c-0.424-0.054-0.856-0.084-1.296-0.084c-0.439,0-0.871,0.03-1.296,0.084L10.31,0
+		C9.463,0.189,8.647,0.462,7.872,0.81l0.166,2.879C7.274,4.12,6.572,4.646,5.939,5.251L3.316,4.2
+		C2.748,4.855,2.242,5.566,1.806,6.326L3.59,8.555c-0.364,0.794-0.635,1.642-0.801,2.527l-2.725,0.73
+		C0.022,12.244,0,12.682,0,13.126c0,0.443,0.023,0.882,0.064,1.314l2.725,0.729c0.166,0.885,0.437,1.732,0.801,2.527l-1.784,2.229
+		c0.436,0.759,0.942,1.472,1.511,2.126l2.623-1.051c0.632,0.605,1.335,1.131,2.097,1.563l-0.165,2.878
+		c0.776,0.348,1.592,0.62,2.438,0.81l1.519-2.43c0.426,0.053,0.858,0.084,1.297,0.084c0.44,0,0.872-0.031,1.296-0.084l1.521,2.43
+		c0.847-0.189,1.661-0.462,2.438-0.81l-0.166-2.878c0.762-0.433,1.466-0.958,2.098-1.563l2.623,1.051
+		c0.568-0.654,1.075-1.367,1.512-2.126l-1.785-2.229c0.363-0.795,0.635-1.643,0.801-2.527L26.188,14.44z"/>
+</g>
+</svg>
+</div>
+<div id="obj13693" class="SCPageObject SCSmartObject menu-tirette maison"   >
+	<svg version="1.1" id="Calque_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="28px" height="26px" viewBox="0.262 0.137 28 26" enable-background="new 0.262 0.137 28 26" xml:space="preserve">
+<g>
+	<path fill="#9F9E9E" d="M26.62,15.907c-0.419,0-0.84-0.161-1.16-0.485L14.262,4.135L3.066,15.422c-0.641,0.647-1.681,0.647-2.322,0
+		c-0.642-0.646-0.642-1.693,0-2.341L13.101,0.623c0.641-0.646,1.682-0.646,2.322,0l12.357,12.458c0.642,0.647,0.642,1.694,0,2.341
+		C27.461,15.746,27.04,15.907,26.62,15.907z"/>
+</g>
+<g>
+	<path fill="#9F9E9E" d="M14.279,5.049L5.15,14.253v11.442c0,0.245,0.197,0.442,0.438,0.442h5.005c0.243,0,0.439-0.197,0.439-0.442
+		v-7.329h6.144v7.329c0,0.245,0.197,0.442,0.438,0.442h5.32c0.244,0,0.438-0.197,0.438-0.442V14.218L14.279,5.049z"/>
+</g>
+</svg>
+</div>
+
+
+
+
+
+
+			</div>
+<!-- OVERLAY: END -->
+			
+			<div class="SCContent">
+<!-- PAGE OBJECTS: START -->
+				
+<div id="obj14109" class="SCPageObject SCRectangle chapArea"   ></div>
+<div id="obj14111" class="SCPageObject SCRectangle chapHeader"   ></div>
+<div id="obj14113" class="SCPageObject SCRectangle textBackground"   ></div>
+<div id="obj14115" class="SCPageObject SCRectangle line"   ></div>
+<div id="obj14117" class="SCPageObject SCRectangle textShadow"   ></div>
+<div id="obj14119" class="SCPageObject SCRectangle popups"   ></div>
+<div id="obj14121" class="SCPageObject SCRectangle textMark"   ></div>
+<div id="obj14107" class="SCPageObject SCImage"  >
+<img id="obj14107_img" src="../images/obj14107_image.jpeg"  />
+</div>
+
+<div id="obj14123" class="SCPageObject SCText pinch-text"   >
+	<div id="obj14123_content" class="SCTextContainer SCTextVAlignTop">
+<div id="texte_chap6" class="textSrc">
+<p id="p69" class="par_normal"><span id="ph204" class="phrase"> <span class="rhese"> <span id="r4580" class="rhese2"><span id="m1586" class="mot pastille Enfant"><span id="c6959" class="consonne syll1">J</span><span id="c6960" class="voyelle syll1">e</span></span> <span id="m1587" class="mot"><span id="c6961" class="consonne syll2">n</span><span class="caractere">’</span><span id="c6962" class="voyelle syll2">a</span><span id="c6963" class="voyelle syll2">i</span></span> <span id="m1588" class="mot"><span id="c6964" class="consonne syll1">p</span><span id="c6965" class="voyelle syll1">a</span><span id="c6966" class="sonmuet syllmuet">s</span></span> <span id="m1589" class="mot"><span id="c6967" class="voyelle syll2">e</span><span id="c6968" class="consonne syll1">s</span><span id="c6969" class="consonne syll1">s</span><span id="c6970" class="voyelle syll1">a</span><span id="c6971" class="diphtongue syll2">y</span><span id="c6972" class="voyelle syll2">é</span></span> <span id="m1590" class="mot"><span id="c6973" class="consonne syll1">d</span><span class="caractere">’</span><span id="c6974" class="voyelle syll1">i</span><span id="c6975" class="consonne syll2">m</span><span id="c6976" class="voyelle syll2">a</span><span id="c6977" class="consonne syll1">g</span><span id="c6978" class="voyelle syll1">i</span><span id="c6979" class="consonne syll2">n</span><span id="c6980" class="voyelle syll2">e</span><span id="c6981" class="voyelle syll2">r</span></span></span> </span> <span class="rhese"> <span id="r4590" class="rhese1"><span id="m1591" class="mot"><span id="c6982" class="consonne syll1">c</span><span id="c6983" class="voyelle syll1">e</span></span> <span id="m1592" class="mot"><span id="c6984" class="consonne syll2">q</span><span id="c6985" class="sonmuet syll2">u</span><span class="caractere">’</span><span id="gc6986" class="mot pastille Buveur"><span id="c6986" class="voyelle syll2">i</span><span id="c6987" class="consonne syll2">l</span></span></span> <span id="m1593" class="mot"><span id="c6988" class="consonne syll1">v</span><span id="c6989" class="voyelle syll1">o</span><span id="c6990" class="voyelle syll1">u</span><span id="c6991" class="consonne syll2">l</span><span id="c6992" class="voyelle syll2">a</span><span id="c6993" class="voyelle syll2">i</span><span id="c6994" class="sonmuet syllmuet">t</span></span> <span id="m1594" class="mot"><span id="c6995" class="consonne syll1">d</span><span id="c6996" class="voyelle syll1">i</span><span id="c6997" class="consonne syll2">r</span><span id="c6998" class="sonmuet syll2">e</span></span> <span id="m1595" class="mot"><span id="c6999" class="consonne syll1">p</span><span id="c7000" class="voyelle syll1">a</span><span id="c7001" class="consonne syll1">r</span></span> <span id="m1596" class="mot"><span id="c7002" class="consonne syll2">l</span><span id="c7003" class="voyelle syll2">à</span></span><span class="ponctuation">.</span></span> </span> </span></p>
+<p id="p70" class="par_dialogue"><span id="ph205" class="phrase"> <span class="rhese"> <span id="r4600" class="rhese2"><span class="ponctuation">—</span> <span id="m1597" class="mot"><span id="c7004" class="consonne syll1">P</span><span id="c7005" class="voyelle syll1">o</span><span id="c7006" class="voyelle syll1">u</span><span id="c7007" class="consonne syll1">r</span><span id="c7008" class="consonne syll2">q</span><span id="c7009" class="sonmuet syll2">u</span><span id="c7010" class="diphtongue syll2">o</span><span id="c7011" class="diphtongue syll2">i</span></span></span> </span> <span class="rhese"> <span id="r4610" class="rhese1"><span id="m1598" class="mot pastille Buveur"><span id="c7012" class="consonne syll1">v</span><span id="c7013" class="voyelle syll1">o</span><span id="c7014" class="voyelle syll1">u</span><span id="c7015" class="sonmuet syllmuet">s</span></span> <span id="m1599" class="mot"><span id="c7016" class="voyelle syll2">a</span><span id="c7017" class="consonne syll1">v</span><span id="c7018" class="voyelle syll1">a</span><span id="c7019" class="consonne syll2">l</span><span id="c7020" class="voyelle syll2">e</span><span id="c7021" class="voyelle syll2">z</span></span> <span id="m1600" class="mot"><span id="c7022" class="consonne syll1">d</span><span id="c7023" class="voyelle syll1">e</span></span> <span id="m1601" class="mot"><span id="c7024" class="consonne syll2">l</span><span class="caractere">’</span><span id="c7025" class="voyelle syll2">e</span><span id="c7026" class="voyelle syll2">n</span><span id="c7027" class="consonne syll1">c</span><span id="c7028" class="consonne syll1">r</span><span id="c7029" class="sonmuet syll1">e</span></span><span class="ponctuation">,</span></span> </span> <span class="rhese"> <span id="r4620" class="rhese2"><span id="m1602" class="mot"><span id="c7030" class="consonne syll2">m</span><span class="caractere">’</span><span id="c7031" class="consonne syll2">s</span><span id="c7032" class="diphtongue syll2">i</span><span id="c7033" class="voyelle syll2">e</span><span id="c7034" class="voyelle syll2">u</span><span id="c7035" class="consonne syll2">r</span></span> <span class="ponctuation">?</span></span> </span> </span></p>
+<p id="p71" class="par_dialogue"><span id="ph206" class="phrase"> <span class="rhese"> <span id="r4630" class="rhese1"><span class="ponctuation">—</span> <span id="m1603" class="mot"><span id="c7036" class="voyelle syll1">À</span></span> <span id="m1604" class="mot"><span id="c7037" class="consonne syll2">c</span><span id="c7038" class="voyelle syll2">a</span><span id="c7039" class="voyelle syll2">u</span><span id="c7040" class="consonne syll1">s</span><span id="c7041" class="sonmuet syll1">e</span></span> <span id="m1605" class="mot"><span id="c7042" class="consonne syll2">d</span><span class="caractere">’</span><span id="c7043" class="voyelle syll2">u</span><span id="c7044" class="consonne syll1">n</span><span id="c7045" class="sonmuet syll1">e</span></span> <span class="popup-def gm1606" data-audio-def="gm1606.mp3">trouble lié au fait d’avoir trop mangé de quelque chose</span><span id="gm1606" class="definition"><span id="m1606" class="mot"><span id="c7046" class="consonne syll2">c</span><span id="c7047" class="consonne syll2">r</span><span id="c7048" class="voyelle syll2">i</span><span id="c7049" class="consonne syll1">s</span><span id="c7050" class="sonmuet syll1">e</span></span> <span id="m1607" class="mot"><span id="c7051" class="consonne syll2">d</span><span id="c7052" class="voyelle syll2">e</span></span> <span id="m1608" class="mot"><span id="c7053" class="consonne syll1">f</span><span id="c7054" class="diphtongue syll1">o</span><span id="c7055" class="diphtongue syll1">i</span><span id="c7056" class="sonmuet syllmuet">e</span></span></span></span> </span> <span class="rhese"> <span id="r4640" class="rhese2"><span id="m1609" class="mot"><span id="c7057" class="consonne syll2">q</span><span id="c7058" class="sonmuet syll2">u</span><span id="c7059" class="voyelle syll2">i</span></span> <span id="m1610" class="mot"><span id="c7060" class="consonne syll1">d</span><span id="c7061" class="voyelle syll1">u</span><span id="c7062" class="consonne syll2">r</span><span id="c7063" class="sonmuet syll2">e</span></span></span> </span> <span class="rhese"> <span id="r4650" class="rhese1"><span id="m1611" class="mot"><span id="c7064" class="consonne syll1">d</span><span id="c7065" class="voyelle syll1">e</span><span id="c7066" class="consonne syll2">p</span><span id="c7067" class="diphtongue syll2">u</span><span id="c7068" class="diphtongue syll2">i</span><span id="c7069" class="sonmuet syllmuet">s</span></span> <span id="m1612" class="mot"><span id="c7070" class="consonne syll1">s</span><span id="c7071" class="diphtongue syll1">o</span><span id="c7072" class="diphtongue syll1">i</span><span id="c7073" class="consonne syll2">x</span><span id="c7074" class="voyelle syll2">a</span><span id="c7075" class="voyelle syll2">n</span><span id="c7076" class="consonne syll1">t</span><span id="c7077" class="sonmuet syll1">e</span></span><span class="caractere">-</span><span id="m1613" class="mot"><span id="c7078" class="consonne syll2">d</span><span id="c7079" class="voyelle syll2">o</span><span id="c7080" class="voyelle syll2">u</span><span id="c7081" class="consonne syll1">z</span><span id="c7082" class="sonmuet syll1">e</span></span> <span id="m1614" class="mot"><span id="c7083" class="voyelle syll2">a</span><span id="c7084" class="voyelle syll2">n</span><span id="c7085" class="sonmuet syllmuet">s</span></span><span class="ponctuation">.</span></span> </span> </span> <span id="ph207" class="phrase"> <span class="rhese"> <span id="r4660" class="rhese2"><span id="m1615" class="mot"><span id="c7086" class="consonne syll1">C</span><span class="caractere">’</span><span id="c7087" class="voyelle syll1">e</span><span id="c7088" class="consonne syll1">s</span><span id="c7089" class="consonne syll1">t</span></span> <span id="m1616" class="mot"><span id="c7090" class="consonne syll2">l</span><span id="c7091" class="voyelle syll2">e</span></span> <span id="m1617" class="mot"><span id="c7092" class="consonne syll1">s</span><span id="c7093" class="voyelle syll1">e</span><span id="c7094" class="voyelle syll1">u</span><span id="c7095" class="consonne syll1">l</span></span> <span id="m1618" class="mot"><span id="c7096" class="voyelle syll2">a</span><span id="c7097" class="consonne syll1">l</span><span id="c7098" class="voyelle syll1">i</span><span id="c7099" class="consonne syll2">m</span><span id="c7100" class="voyelle syll2">e</span><span id="c7101" class="voyelle syll2">n</span><span id="c7102" class="sonmuet syllmuet">t</span></span></span> </span> <span class="rhese"> <span id="r4670" class="rhese1"><span id="m1619" class="mot"><span id="c7103" class="consonne syll1">q</span><span id="c7104" class="sonmuet syll1">u</span><span id="c7105" class="voyelle syll1">i</span></span> <span id="m1620" class="mot"><span id="c7106" class="consonne syll2">p</span><span id="c7107" class="voyelle syll2">a</span><span id="c7108" class="consonne syll1">s</span><span id="c7109" class="consonne syll1">s</span><span id="c7110" class="sonmuet syll1">e</span></span><span class="ponctuation">.</span></span> </span> </span> <span id="ph208" class="phrase"> <span class="rhese"><span id="r4680" class="rhese2"><span id="m1621" class="mot"><span id="c7111" class="voyelle syll2">E</span><span id="c7112" class="voyelle syll2">t</span></span> <span id="m1622" class="mot"><span id="c7113" class="consonne syll1">p</span><span id="c7114" class="diphtongue syll1">u</span><span id="c7115" class="diphtongue syll1">i</span><span id="c7116" class="sonmuet syllmuet">s</span></span> <span id="m1623" class="mot"><span id="c7117" class="consonne syll2">c</span><span class="caractere">’</span><span id="c7118" class="voyelle syll2">e</span><span id="c7119" class="consonne syll2">s</span><span id="c7120" class="consonne syll2">t</span></span> <span id="m1624" class="mot"><span id="c7121" class="consonne syll1">n</span><span id="c7122" class="voyelle syll1">o</span><span id="c7123" class="voyelle syll1">u</span><span id="c7124" class="consonne syll2">r</span><span id="c7125" class="consonne syll2">r</span><span id="c7126" class="voyelle syll2">i</span><span id="c7127" class="consonne syll1">s</span><span id="c7128" class="consonne syll1">s</span><span id="c7129" class="voyelle syll1">a</span><span id="c7130" class="voyelle syll1">n</span><span id="c7131" class="sonmuet syllmuet">t</span></span><span class="ponctuation">.</span></span></span> </span></p>
+<p id="p72" class="par_dialogue"><span id="ph209" class="phrase"> <span class="rhese"><span id="r4690" class="rhese1"><span class="ponctuation">—</span> <span id="m1625" class="mot"><span id="c7132" class="voyelle syll1">A</span><span id="c7133" class="sonmuet syllmuet">h</span></span> <span class="ponctuation">?</span></span></span> </span> <span id="ph210" class="phrase"> <span class="rhese"><span id="r4700" class="rhese2"><span id="m1626" class="mot"><span id="c7134" class="consonne syll2">M</span><span id="c7135" class="voyelle syll2">a</span><span id="c7136" class="voyelle syll2">i</span><span id="c7137" class="sonmuet syllmuet">s</span></span> <span id="m1627" class="mot"><span id="c7138" class="consonne syll1">p</span><span id="c7139" class="voyelle syll1">o</span><span id="c7140" class="voyelle syll1">u</span><span id="c7141" class="consonne syll1">r</span><span id="c7142" class="consonne syll2">q</span><span id="c7143" class="sonmuet syll2">u</span><span id="c7144" class="diphtongue syll2">o</span><span id="c7145" class="diphtongue syll2">i</span></span></span></span> <span class="rhese"><span id="r4710" class="rhese1"><span id="m1628" class="mot"><span id="c7146" class="consonne syll1">n</span><span id="c7147" class="voyelle syll1">e</span></span> <span id="m1629" class="mot"><span id="c7148" class="consonne syll2">p</span><span id="c7149" class="voyelle syll2">a</span><span id="c7150" class="sonmuet syllmuet">s</span></span> <span id="m1630" class="mot"><span id="c7151" class="voyelle syll1">a</span><span id="c7152" class="consonne syll2">c</span><span id="c7153" class="consonne syll2">h</span><span id="c7154" class="voyelle syll2">e</span><span id="c7155" class="consonne syll1">t</span><span id="c7156" class="voyelle syll1">e</span><span id="c7157" class="voyelle syll1">r</span></span></span></span> <span class="rhese"><span id="r4720" class="rhese2"><span id="m1631" class="mot"><span id="c7158" class="consonne syll2">t</span><span id="c7159" class="voyelle syll2">o</span><span id="c7160" class="voyelle syll2">u</span><span id="c7161" class="sonmuet syllmuet">t</span></span> <span id="m1632" class="mot"><span id="c7162" class="consonne syll1">s</span><span id="c7163" class="voyelle syll1">i</span><span id="c7164" class="voyelle syll1">m</span><span id="c7165" class="consonne syll2">p</span><span id="c7166" class="consonne syll2">l</span><span id="c7167" class="voyelle syll2">e</span><span id="c7168" class="consonne syll1">m</span><span id="c7169" class="voyelle syll1">e</span><span id="c7170" class="voyelle syll1">n</span><span id="c7171" class="sonmuet syllmuet">t</span></span></span></span> <span class="rhese"><span id="r4730" class="rhese1"><span id="m1633" class="mot"><span id="c7172" class="consonne syll2">d</span><span id="c7173" class="voyelle syll2">e</span><span id="c7174" class="voyelle syll2">s</span></span> <span id="m1634" class="mot"><span id="c7175" class="consonne syll1">b</span><span id="c7176" class="voyelle syll1">o</span><span id="c7177" class="voyelle syll1">u</span><span id="c7178" class="consonne syll2">t</span><span id="c7179" class="voyelle syll2">e</span><span id="c7180" class="diphtongue syll1">i</span><span id="c7181" class="diphtongue syll1">l</span><span id="c7182" class="diphtongue syll1">l</span><span id="c7183" class="sonmuet syll1">e</span><span id="c7184" class="sonmuet syllmuet">s</span></span> <span id="m1635" class="mot"><span id="c7185" class="consonne syll2">d</span><span class="caractere">’</span><span id="c7186" class="voyelle syll2">e</span><span id="c7187" class="voyelle syll2">n</span><span id="c7188" class="consonne syll1">c</span><span id="c7189" class="consonne syll1">r</span><span id="c7190" class="sonmuet syll1">e</span></span> <span class="ponctuation">?</span></span></span> </span> <span id="ph211" class="phrase"> <span class="rhese"><span id="r4740" class="rhese2"><span id="m1636" class="mot"><span id="c7191" class="voyelle syll2">E</span><span id="c7192" class="voyelle syll2">n</span></span> <span id="m1637" class="mot"><span id="c7193" class="voyelle syll1">i</span><span id="c7194" class="voyelle syll1">n</span><span id="c7195" class="consonne syll1">s</span><span id="c7196" class="consonne syll2">t</span><span id="c7197" class="voyelle syll2">a</span><span id="c7198" class="consonne syll1">l</span><span id="c7199" class="consonne syll1">l</span><span id="c7200" class="voyelle syll1">a</span><span id="c7201" class="voyelle syll1">n</span><span id="c7202" class="sonmuet syllmuet">t</span></span> <span id="m1638" class="mot"><span id="c7203" class="voyelle syll2">u</span><span id="c7204" class="voyelle syll2">n</span></span> <span id="m1639" class="mot"><span id="c7205" class="consonne syll1">r</span><span id="c7206" class="voyelle syll1">é</span><span id="c7207" class="consonne syll2">f</span><span id="c7208" class="consonne syll2">r</span><span id="c7209" class="voyelle syll2">i</span><span id="c7210" class="consonne syll1">g</span><span id="c7211" class="voyelle syll1">é</span><span id="c7212" class="consonne syll2">r</span><span id="c7213" class="voyelle syll2">a</span><span id="c7214" class="consonne syll1">t</span><span id="c7215" class="voyelle syll1">e</span><span id="c7216" class="voyelle syll1">u</span><span id="c7217" class="consonne syll1">r</span></span></span></span> <span class="rhese"><span id="r4750" class="rhese1"><span id="m1640" class="mot"><span id="c7218" class="consonne syll2">d</span><span id="c7219" class="voyelle syll2">a</span><span id="c7220" class="voyelle syll2">n</span><span id="c7221" class="sonmuet syllmuet">s</span></span> <span id="m1641" class="mot"><span id="c7222" class="consonne syll1">c</span><span id="c7223" class="voyelle syll1">e</span><span id="c7224" class="consonne syll2">t</span><span id="c7225" class="consonne syll2">t</span><span id="c7226" class="sonmuet syll2">e</span></span> <span class="popup-def m1642" data-audio-def="m1642.mp3">partie souterraine d’un bâtiment, pour conserver des morts</span><span id="m1642" class="mot definition"><span id="c7227" class="consonne syll1">c</span><span id="c7228" class="consonne syll1">r</span><span id="c7229" class="voyelle syll1">y</span><span id="c7230" class="consonne syll1">p</span><span id="c7231" class="consonne syll2">t</span><span id="c7232" class="sonmuet syll2">e</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r4760" class="rhese2"><span id="m1643" class="mot"><span id="c7233" class="consonne syll1">v</span><span id="c7234" class="voyelle syll1">o</span><span id="c7235" class="voyelle syll1">u</span><span id="c7236" class="sonmuet syllmuet">s</span></span> <span id="m1644" class="mot"><span id="c7237" class="consonne syll2">p</span><span id="c7238" class="voyelle syll2">o</span><span id="c7239" class="voyelle syll2">u</span><span id="c7240" class="consonne syll1">r</span><span id="c7241" class="consonne syll1">r</span><span id="c7242" class="diphtongue syll1">i</span><span id="c7243" class="voyelle syll1">e</span><span id="c7244" class="voyelle syll1">z</span></span> <span id="m1645" class="mot"><span id="c7245" class="consonne syll2">r</span><span id="c7246" class="voyelle syll2">e</span><span id="c7247" class="consonne syll2">s</span><span id="c7248" class="consonne syll1">t</span><span id="c7249" class="voyelle syll1">e</span><span id="c7250" class="voyelle syll1">r</span></span></span></span> <span class="rhese"><span id="r4770" class="rhese1"><span id="m1646" class="mot"><span id="c7251" class="consonne syll2">b</span><span id="c7252" class="diphtongue syll2">i</span><span id="c7253" class="voyelle syll2">e</span><span id="c7254" class="voyelle syll2">n</span></span> <span id="m1647" class="mot"><span id="c7255" class="consonne syll1">t</span><span id="c7256" class="consonne syll1">r</span><span id="c7257" class="voyelle syll1">a</span><span id="c7258" class="voyelle syll1">n</span><span id="c7259" class="consonne syll2">q</span><span id="c7260" class="sonmuet syll2">u</span><span id="c7261" class="voyelle syll2">i</span><span id="c7262" class="consonne syll1">l</span><span id="c7263" class="consonne syll1">l</span><span id="c7264" class="voyelle syll1">e</span><span id="c7265" class="consonne syll2">m</span><span id="c7266" class="voyelle syll2">e</span><span id="c7267" class="voyelle syll2">n</span><span id="c7268" class="sonmuet syllmuet">t</span></span> <span id="m1648" class="mot"><span id="c7269" class="consonne syll1">c</span><span id="c7270" class="consonne syll1">h</span><span id="c7271" class="voyelle syll1">e</span><span id="c7272" class="voyelle syll1">z</span></span> <span id="m1649" class="mot"><span id="c7273" class="consonne syll2">v</span><span id="c7274" class="voyelle syll2">o</span><span id="c7275" class="voyelle syll2">u</span><span id="c7276" class="sonmuet syllmuet">s</span></span><span class="ponctuation">.</span></span></span> </span></p>
+<p id="p73" class="par_dialogue"><span id="ph212" class="phrase"> <span class="rhese"><span id="r4780" class="rhese2"><span class="ponctuation">—</span> <span id="m1650" class="mot"><span id="c7277" class="consonne syll1">N</span><span id="c7278" class="voyelle syll1">o</span><span id="c7279" class="voyelle syll1">n</span></span><span class="ponctuation">,</span> <span id="m1651" class="mot pastille Enfant"><span id="c7280" class="consonne syll2">p</span><span id="c7281" class="voyelle syll2">e</span><span id="c7282" class="consonne syll1">t</span><span id="c7283" class="voyelle syll1">i</span><span id="c7284" class="sonmuet syllmuet">t</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph213" class="phrase"> <span class="rhese"><span id="r4790" class="rhese1"><span id="m1652" class="mot"><span id="c7285" class="consonne syll2">L</span><span class="caractere">’</span><span id="c7286" class="voyelle syll2">e</span><span id="c7287" class="voyelle syll2">n</span><span id="c7288" class="consonne syll1">c</span><span id="c7289" class="consonne syll1">r</span><span id="c7290" class="sonmuet syll1">e</span></span> <span id="m1653" class="mot"><span id="c7291" class="consonne syll2">l</span><span id="c7292" class="voyelle syll2">i</span><span id="c7293" class="consonne syll1">q</span><span id="c7294" class="sonmuet syll1">u</span><span id="c7295" class="voyelle syll1">i</span><span id="c7296" class="consonne syll2">d</span><span id="c7297" class="sonmuet syll2">e</span></span> <span id="m1654" class="mot"><span id="c7298" class="voyelle syll1">e</span><span id="c7299" class="voyelle syll1">s</span><span id="c7300" class="voyelle syll1">t</span></span> <span class="popup-def m1655" data-audio-def="m1655.mp3">qui a très peu de goût</span><span id="m1655" class="mot definition"><span id="c7301" class="consonne syll2">f</span><span id="c7302" class="voyelle syll2">a</span><span id="c7303" class="consonne syll1">d</span><span id="c7304" class="sonmuet syll1">e</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph214" class="phrase"> <span class="rhese"><span id="r4800" class="rhese2"><span id="m1656" class="mot"><span id="c7305" class="consonne syll2">C</span><span class="caractere">’</span><span id="c7306" class="voyelle syll2">e</span><span id="c7307" class="consonne syll2">s</span><span id="c7308" class="consonne syll2">t</span></span> <span id="m1657" class="mot"><span id="c7309" class="consonne syll1">c</span><span id="c7310" class="voyelle syll1">o</span><span id="c7311" class="consonne syll2">m</span><span id="c7312" class="consonne syll2">m</span><span id="c7313" class="sonmuet syll2">e</span></span> <span id="m1658" class="mot"><span id="c7314" class="voyelle syll1">u</span><span id="c7315" class="voyelle syll1">n</span></span> <span id="m1659" class="mot"><span id="c7316" class="consonne syll2">r</span><span id="c7317" class="voyelle syll2">é</span><span id="c7318" class="consonne syll1">g</span><span id="c7319" class="voyelle syll1">i</span><span id="c7320" class="consonne syll2">m</span><span id="c7321" class="sonmuet syll2">e</span></span> <span id="m1660" class="mot"><span id="c7322" class="consonne syll1">s</span><span id="c7323" class="voyelle syll1">a</span><span id="c7324" class="voyelle syll1">n</span><span id="c7325" class="sonmuet syllmuet">s</span></span> <span id="m1661" class="mot"><span id="c7326" class="consonne syll2">s</span><span id="c7327" class="voyelle syll2">e</span><span id="c7328" class="consonne syll2">l</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph215" class="phrase"> <span class="rhese"><span id="r4810" class="rhese1"><span id="m1662" class="mot"><span id="c7329" class="consonne syll1">P</span><span id="c7330" class="voyelle syll1">a</span><span id="c7331" class="consonne syll1">r</span></span> <span id="m1663" class="mot"><span id="c7332" class="consonne syll2">c</span><span id="c7333" class="voyelle syll2">o</span><span id="c7334" class="voyelle syll2">n</span><span id="c7335" class="consonne syll1">t</span><span id="c7336" class="consonne syll1">r</span><span id="c7337" class="sonmuet syll1">e</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r4820" class="rhese2"><span id="m1664" class="mot"><span id="c7338" class="consonne syll2">l</span><span class="caractere">’</span><span id="c7339" class="voyelle syll2">e</span><span id="c7340" class="voyelle syll2">n</span><span id="c7341" class="consonne syll1">c</span><span id="c7342" class="consonne syll1">r</span><span id="c7343" class="sonmuet syll1">e</span></span> <span id="m1665" class="mot"><span id="c7344" class="consonne syll2">q</span><span id="c7345" class="sonmuet syll2">u</span><span id="c7346" class="voyelle syll2">i</span></span> <span id="m1666" class="mot"><span id="c7347" class="voyelle syll1">a</span></span> <span id="m1667" class="mot"><span id="c7348" class="consonne syll2">v</span><span id="c7349" class="diphtongue syll2">i</span><span id="c7350" class="voyelle syll2">e</span><span id="c7351" class="diphtongue syll1">i</span><span id="c7352" class="diphtongue syll1">l</span><span id="c7353" class="diphtongue syll1">l</span><span id="c7354" class="voyelle syll1">i</span></span></span></span> <span class="rhese"><span id="r4830" class="rhese1"><span id="m1668" class="mot"><span id="c7355" class="consonne syll2">s</span><span id="c7356" class="voyelle syll2">u</span><span id="c7357" class="consonne syll2">r</span></span> <span id="m1669" class="mot"><span id="c7358" class="consonne syll1">l</span><span id="c7359" class="voyelle syll1">e</span></span> <span id="m1670" class="mot"><span id="c7360" class="consonne syll2">p</span><span id="c7361" class="voyelle syll2">a</span><span id="c7362" class="consonne syll1">p</span><span id="c7363" class="diphtongue syll1">i</span><span id="c7364" class="voyelle syll1">e</span><span id="c7365" class="voyelle syll1">r</span></span></span></span> <span class="rhese"><span id="r4840" class="rhese2"><span id="m1671" class="mot"><span id="c7366" class="consonne syll2">p</span><span id="c7367" class="voyelle syll2">o</span><span id="c7368" class="consonne syll1">s</span><span id="c7369" class="consonne syll1">s</span><span id="c7370" class="voyelle syll1">è</span><span id="c7371" class="consonne syll2">d</span><span id="c7372" class="sonmuet syll2">e</span></span> <span id="m1672" class="mot"><span id="c7373" class="voyelle syll1">u</span><span id="c7374" class="consonne syll2">n</span><span id="c7375" class="sonmuet syll2">e</span></span> <span class="popup-def m1673" data-audio-def="m1673.mp3">goût</span><span id="m1673" class="mot definition"><span id="c7376" class="consonne syll1">s</span><span id="c7377" class="voyelle syll1">a</span><span id="c7378" class="consonne syll2">v</span><span id="c7379" class="voyelle syll2">e</span><span id="c7380" class="voyelle syll2">u</span><span id="c7381" class="consonne syll2">r</span></span></span></span> <span class="rhese"><span id="r4850" class="rhese1"><span id="m1674" class="mot"><span id="c7382" class="voyelle syll1">i</span><span id="c7383" class="voyelle syll1">n</span><span id="c7384" class="consonne syll2">c</span><span id="c7385" class="voyelle syll2">o</span><span id="c7386" class="voyelle syll2">m</span><span id="c7387" class="consonne syll1">p</span><span id="c7388" class="voyelle syll1">a</span><span id="c7389" class="consonne syll2">r</span><span id="c7390" class="voyelle syll2">a</span><span id="c7391" class="consonne syll1">b</span><span id="c7392" class="consonne syll1">l</span><span id="c7393" class="sonmuet syll1">e</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph216" class="phrase"> <span class="rhese"><span id="r4860" class="rhese2"><span id="m1675" class="mot"><span id="c7394" class="voyelle syll2">U</span><span id="c7395" class="voyelle syll2">n</span></span> <span id="m1676" class="mot"><span id="c7396" class="consonne syll1">v</span><span id="c7397" class="consonne syll1">r</span><span id="c7398" class="voyelle syll1">a</span><span id="c7399" class="voyelle syll1">i</span></span> <span class="popup-def m1677" data-audio-def="m1677.mp3">plat délicieux</span><span id="m1677" class="mot definition"><span id="c7400" class="consonne syll2">r</span><span id="c7401" class="voyelle syll2">é</span><span id="c7402" class="consonne syll1">g</span><span id="c7403" class="voyelle syll1">a</span><span id="c7404" class="consonne syll1">l</span></span><span class="ponctuation">.</span></span></span> </span></p>
+<p id="p74" class="par_normal"><span id="ph217" class="phrase"> <span class="rhese"><span id="r4870" class="rhese1"><span id="m1678" class="mot"><span id="gc7405" class="mot pastille Enfant"><span id="c7405" class="consonne syll1">J</span><span class="caractere">’</span></span><span id="c7406" class="voyelle syll1">a</span><span id="c7407" class="voyelle syll1">i</span></span> <span id="m1679" class="mot"><span id="c7408" class="consonne syll2">f</span><span id="c7409" class="voyelle syll2">a</span><span id="c7410" class="voyelle syll2">i</span><span id="c7411" class="sonmuet syllmuet">t</span></span> <span id="m1680" class="mot"><span id="c7412" class="consonne syll1">l</span><span id="c7413" class="voyelle syll1">a</span></span> <span id="m1681" class="mot"><span id="c7414" class="consonne syll2">g</span><span id="c7415" class="consonne syll2">r</span><span id="c7416" class="voyelle syll2">i</span><span id="c7417" class="consonne syll1">m</span><span id="c7418" class="voyelle syll1">a</span><span id="c7419" class="consonne syll2">c</span><span id="c7420" class="sonmuet syll2">e</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph218" class="phrase"> <span class="rhese"><span id="r4880" class="rhese2"><span id="m1682" class="mot"><span id="c7421" class="voyelle syll1">U</span><span id="c7422" class="voyelle syll1">n</span></span> <span id="m1683" class="mot"><span id="c7423" class="consonne syll2">r</span><span id="c7424" class="voyelle syll2">é</span><span id="c7425" class="consonne syll1">g</span><span id="c7426" class="voyelle syll1">a</span><span id="c7427" class="consonne syll1">l</span></span> <span class="ponctuation">?</span></span></span> </span> <span id="ph219" class="phrase"> <span class="rhese"><span id="r4890" class="rhese1"><span id="m1684" class="mot"><span id="c7428" class="consonne syll2">T</span><span id="c7429" class="voyelle syll2">u</span></span> <span id="m1685" class="mot"><span id="c7430" class="consonne syll1">p</span><span id="c7431" class="voyelle syll1">a</span><span id="c7432" class="consonne syll1">r</span><span id="c7433" class="consonne syll2">l</span><span id="c7434" class="sonmuet syll2">e</span><span id="c7435" class="sonmuet syllmuet">s</span></span> <span class="ponctuation">!</span></span></span> </span></p>
+<p id="p75" class="par_dialogue"><span id="ph220" class="phrase"> <span class="rhese"><span id="r4900" class="rhese2"><span class="ponctuation">—</span> <span id="m1686" class="mot pastille Enfant"><span id="c7436" class="consonne syll1">T</span><span id="c7437" class="voyelle syll1">u</span></span> <span id="m1687" class="mot"><span id="c7438" class="consonne syll2">n</span><span id="c7439" class="voyelle syll2">e</span></span> <span id="m1688" class="mot"><span id="c7440" class="consonne syll1">m</span><span id="c7441" class="voyelle syll1">e</span></span> <span id="m1689" class="mot"><span id="c7442" class="consonne syll2">c</span><span id="c7443" class="consonne syll2">r</span><span id="c7444" class="diphtongue syll2">o</span><span id="c7445" class="diphtongue syll2">i</span><span id="c7446" class="sonmuet syllmuet">s</span></span> <span id="m1690" class="mot"><span id="c7447" class="consonne syll1">p</span><span id="c7448" class="voyelle syll1">a</span><span id="c7449" class="sonmuet syllmuet">s</span></span> <span class="ponctuation">?</span></span></span> </span></p>
+<p id="p76" class="par_dialogue"><span id="ph221" class="phrase"> <span class="rhese"><span id="r4910" class="rhese1"><span class="ponctuation">—</span> <span id="m1691" class="mot"><span id="c7450" class="consonne syll1">S</span><span id="c7451" class="voyelle syll1">i</span></span><span class="ponctuation">,</span> <span id="m1692" class="mot"><span id="c7452" class="consonne syll2">s</span><span id="c7453" class="voyelle syll2">i</span></span><span class="ponctuation">.</span></span></span> </span></p>
+<p id="p77" class="par_normal"><span id="ph222" class="phrase"> <span class="rhese"><span id="r4920" class="rhese2"><span id="m1693" class="mot"><span id="gc7454" class="mot pastille Enfant"><span id="c7454" class="consonne syll1">J</span><span class="caractere">’</span></span><span id="c7455" class="voyelle syll1">a</span><span id="c7456" class="voyelle syll1">i</span></span> <span id="m1694" class="mot"><span id="c7457" class="consonne syll2">c</span><span id="c7458" class="voyelle syll2">o</span><span id="c7459" class="consonne syll1">m</span><span id="c7460" class="consonne syll1">m</span><span id="c7461" class="voyelle syll1">e</span><span id="c7462" class="voyelle syll1">n</span><span id="c7463" class="consonne syll2">c</span><span id="c7464" class="voyelle syll2">é</span></span> <span id="m1695" class="mot"><span id="c7465" class="voyelle syll1">à</span></span> <span id="m1696" class="mot"><span id="c7466" class="consonne syll2">r</span><span id="c7467" class="voyelle syll2">e</span><span id="c7468" class="consonne syll1">c</span><span id="c7469" class="voyelle syll1">u</span><span id="c7470" class="consonne syll2">l</span><span id="c7471" class="voyelle syll2">e</span><span id="c7472" class="voyelle syll2">r</span></span><span class="ponctuation">.</span></span></span> </span></p>
+<p id="p78" class="par_dialogue"><span id="ph223" class="phrase"> <span class="rhese"><span id="r4930" class="rhese1"><span class="ponctuation">—</span> <span id="m1697" class="mot"><span id="c7473" class="consonne syll1">N</span><span id="c7474" class="voyelle syll1">o</span><span id="c7475" class="voyelle syll1">n</span></span><span class="ponctuation">,</span></span> <span class="rhese"><span id="r4940" class="rhese2"><span id="m1698" class="mot pastille Enfant"><span id="c7476" class="consonne syll2">t</span><span id="c7477" class="voyelle syll2">u</span></span> <span id="m1699" class="mot"><span id="c7478" class="consonne syll1">n</span><span id="c7479" class="voyelle syll1">e</span></span> <span id="m1700" class="mot"><span id="c7480" class="consonne syll2">m</span><span id="c7481" class="voyelle syll2">e</span></span> <span id="m1701" class="mot"><span id="c7482" class="consonne syll1">c</span><span id="c7483" class="consonne syll1">r</span><span id="c7484" class="diphtongue syll1">o</span><span id="c7485" class="diphtongue syll1">i</span><span id="c7486" class="sonmuet syllmuet">s</span></span> <span id="m1702" class="mot"><span id="c7487" class="consonne syll2">p</span><span id="c7488" class="voyelle syll2">a</span><span id="c7489" class="sonmuet syllmuet">s</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph224" class="phrase"> <span class="rhese"><span id="r4950" class="rhese1"><span class="popup-def gm1703" data-audio-def="gm1703.mp3">cela n’a pas d’importance</span><span id="gm1703" class="definition"><span id="m1703" class="mot"><span id="c7490" class="consonne syll1">Q</span><span id="c7491" class="sonmuet syll1">u</span><span class="caractere">’</span><span id="c7492" class="voyelle syll1">à</span></span> <span id="m1704" class="mot"><span id="c7493" class="consonne syll2">c</span><span id="c7494" class="voyelle syll2">e</span><span id="c7495" class="consonne syll1">l</span><span id="c7496" class="voyelle syll1">a</span></span> <span id="m1705" class="mot"><span id="c7497" class="consonne syll2">n</span><span id="c7498" class="voyelle syll2">e</span></span> <span id="m1706" class="mot"><span id="c7499" class="consonne syll1">t</span><span id="c7500" class="diphtongue syll1">i</span><span id="c7501" class="voyelle syll1">e</span><span id="c7502" class="consonne syll2">n</span><span id="c7503" class="consonne syll2">n</span><span id="c7504" class="sonmuet syll2">e</span></span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r4960" class="rhese2"><span id="m1707" class="mot pastille Buveur"><span id="c7505" class="consonne syll1">j</span><span id="c7506" class="voyelle syll1">e</span></span> <span id="m1708" class="mot"><span id="c7507" class="consonne syll2">v</span><span id="c7508" class="voyelle syll2">a</span><span id="c7509" class="voyelle syll2">i</span><span id="c7510" class="sonmuet syllmuet">s</span></span> <span id="m1709" class="mot"><span id="c7511" class="consonne syll1">t</span><span id="c7512" class="voyelle syll1">e</span></span> <span id="m1710" class="mot"><span id="c7513" class="consonne syll2">d</span><span id="c7514" class="voyelle syll2">o</span><span id="c7515" class="consonne syll1">n</span><span id="c7516" class="consonne syll1">n</span><span id="c7517" class="voyelle syll1">e</span><span id="c7518" class="voyelle syll1">r</span></span></span></span> <span class="rhese"><span id="r4970" class="rhese1"><span id="m1711" class="mot"><span id="c7519" class="consonne syll2">l</span><span id="c7520" class="voyelle syll2">e</span></span> <span id="m1712" class="mot"><span id="c7521" class="consonne syll1">g</span><span id="c7522" class="voyelle syll1">o</span><span id="c7523" class="voyelle syll1">û</span><span id="c7524" class="sonmuet syllmuet">t</span></span> <span id="m1713" class="mot"><span id="c7525" class="consonne syll2">d</span><span id="c7526" class="voyelle syll2">e</span></span> <span id="m1714" class="mot"><span id="c7527" class="consonne syll1">l</span><span class="caractere">’</span><span id="c7528" class="voyelle syll1">e</span><span id="c7529" class="voyelle syll1">n</span><span id="c7530" class="consonne syll2">c</span><span id="c7531" class="consonne syll2">r</span><span id="c7532" class="sonmuet syll2">e</span></span> <span class="ponctuation">!</span></span></span> </span> <span id="ph225" class="phrase"> <span class="rhese"><span id="r4980" class="rhese2"><span id="m1715" class="mot"><span id="c7533" class="consonne syll1">D</span><span id="c7534" class="voyelle syll1">e</span><span id="c7535" class="consonne syll2">m</span><span id="c7536" class="voyelle syll2">a</span><span id="c7537" class="voyelle syll2">i</span><span id="c7538" class="voyelle syll2">n</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r4990" class="rhese1"><span id="m1716" class="mot"><span id="c7539" class="consonne syll1">t</span><span id="c7540" class="voyelle syll1">u</span></span> <span id="m1717" class="mot"><span id="c7541" class="consonne syll2">c</span><span id="c7542" class="voyelle syll2">o</span><span id="c7543" class="voyelle syll2">m</span><span id="c7544" class="consonne syll1">p</span><span id="c7545" class="consonne syll1">r</span><span id="c7546" class="voyelle syll1">e</span><span id="c7547" class="voyelle syll1">n</span><span id="c7548" class="consonne syll2">d</span><span id="c7549" class="consonne syll2">r</span><span id="c7550" class="voyelle syll2">a</span><span id="c7551" class="sonmuet syllmuet">s</span></span><span class="ponctuation">…</span></span></span> </span> </span></p>
+<p id="p79" class="par_normal"><span id="ph226" class="phrase"> <span class="rhese"><span id="r5000" class="rhese2"><span id="m1718" class="mot pastille Buveur"><span id="c7552" class="voyelle syll1">I</span><span id="c7553" class="consonne syll1">l</span></span> <span id="m1719" class="mot"><span id="c7554" class="voyelle syll2">a</span></span> <span class="popup-def m1720" data-audio-def="m1720.mp3">il est sorti soudainement</span><span id="m1720" class="mot definition"><span id="c7555" class="consonne syll1">j</span><span id="c7556" class="voyelle syll1">a</span><span id="c7557" class="diphtongue syll2">i</span><span id="c7558" class="diphtongue syll2">l</span><span id="c7559" class="diphtongue syll2">l</span><span id="c7560" class="voyelle syll2">i</span></span> <span id="m1721" class="mot"><span id="c7561" class="consonne syll1">c</span><span id="c7562" class="voyelle syll1">o</span><span id="c7563" class="consonne syll2">m</span><span id="c7564" class="consonne syll2">m</span><span id="c7565" class="sonmuet syll2">e</span></span> <span id="m1722" class="mot"><span id="c7566" class="voyelle syll1">u</span><span id="c7567" class="voyelle syll1">n</span></span> <span id="m1723" class="mot"><span id="c7568" class="consonne syll2">d</span><span id="c7569" class="diphtongue syll2">i</span><span id="c7570" class="voyelle syll2">a</span><span id="c7571" class="consonne syll1">b</span><span id="c7572" class="consonne syll1">l</span><span id="c7573" class="sonmuet syll1">e</span></span></span></span> <span class="rhese"><span id="r5010" class="rhese1"><span id="m1724" class="mot"><span id="c7574" class="consonne syll2">d</span><span id="c7575" class="voyelle syll2">e</span></span> <span id="m1725" class="mot"><span id="c7576" class="consonne syll1">s</span><span id="c7577" class="voyelle syll1">o</span><span id="c7578" class="voyelle syll1">n</span></span> <span class="popup-def m1726" data-audio-def="m1726.mp3">longue caisse où l’on enferme le corps des morts avant de les enterrer</span><span id="m1726" class="mot definition"><span id="c7579" class="consonne syll2">c</span><span id="c7580" class="voyelle syll2">e</span><span id="c7581" class="consonne syll2">r</span><span id="c7582" class="consonne syll1">c</span><span id="c7583" class="sonmuet syll1">u</span><span id="c7584" class="voyelle syll1">e</span><span id="c7585" class="diphtongue syll1">i</span><span id="c7586" class="diphtongue syll1">l</span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph227" class="phrase"> <span class="rhese"><span id="r5020" class="rhese2"><span id="m1727" class="mot"><span id="c7587" class="voyelle syll2">À</span></span> <span id="m1728" class="mot"><span id="c7588" class="consonne syll1">l</span><span id="c7589" class="voyelle syll1">a</span></span> <span id="m1729" class="mot"><span id="c7590" class="consonne syll2">p</span><span id="c7591" class="consonne syll2">l</span><span id="c7592" class="voyelle syll2">a</span><span id="c7593" class="consonne syll1">c</span><span id="c7594" class="sonmuet syll1">e</span></span> <span id="m1730" class="mot"><span id="c7595" class="consonne syll2">d</span><span id="c7596" class="voyelle syll2">e</span><span id="c7597" class="voyelle syll2">s</span></span> <span id="m1731" class="mot"><span id="c7598" class="consonne syll1">d</span><span id="c7599" class="voyelle syll1">e</span><span id="c7600" class="voyelle syll1">n</span><span id="c7601" class="sonmuet syllmuet">t</span><span id="c7602" class="sonmuet syllmuet">s</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r5030" class="rhese1"><span id="m1732" class="mot"><span id="c7603" class="voyelle syll2">i</span><span id="c7604" class="consonne syll2">l</span></span> <span id="m1733" class="mot"><span id="c7605" class="voyelle syll1">a</span><span id="c7606" class="consonne syll2">v</span><span id="c7607" class="voyelle syll2">a</span><span id="c7608" class="voyelle syll2">i</span><span id="c7609" class="sonmuet syllmuet">t</span></span></span></span> <span class="rhese"><span id="r5040" class="rhese2"><span id="m1734" class="mot"><span id="c7610" class="consonne syll1">d</span><span id="c7611" class="voyelle syll1">e</span><span id="c7612" class="voyelle syll1">s</span></span> <span class="popup-def gm1735" data-audio-def="gm1735.mp3">plumes en métal utilisées autrefois pour écrire à l’encre</span><span id="gm1735" class="mot pastille Plume definition"><span id="m1735" class="mot"><span id="c7613" class="consonne syll2">p</span><span id="c7614" class="consonne syll2">l</span><span id="c7615" class="voyelle syll2">u</span><span id="c7616" class="consonne syll1">m</span><span id="c7617" class="sonmuet syll1">e</span><span id="c7618" class="sonmuet syllmuet">s</span></span> <span id="m1736" class="mot"><span id="c7619" class="consonne syll2">s</span><span id="c7620" class="voyelle syll2">e</span><span id="c7621" class="consonne syll2">r</span><span id="c7622" class="consonne syll1">g</span><span id="c7623" class="voyelle syll1">e</span><span id="c7624" class="voyelle syll1">n</span><span id="c7625" class="sonmuet syllmuet">t</span></span><span class="caractere">-</span><span id="m1737" class="mot"><span id="c7626" class="consonne syll2">m</span><span id="c7627" class="voyelle syll2">a</span><span id="c7628" class="consonne syll1">j</span><span id="c7629" class="voyelle syll1">o</span><span id="c7630" class="consonne syll1">r</span></span></span><span class="ponctuation">.</span></span></span> </span> <span id="ph228" class="phrase"> <span class="rhese"><span id="r5050" class="rhese1"><span id="m1738" class="mot"><span id="c7631" class="consonne syll2">S</span><span id="c7632" class="voyelle syll2">o</span><span id="c7633" class="voyelle syll2">n</span></span> <span id="m1739" class="mot"><span id="c7634" class="consonne syll1">s</span><span id="c7635" class="voyelle syll1">o</span><span id="c7636" class="voyelle syll1">u</span><span id="c7637" class="consonne syll2">r</span><span id="c7638" class="voyelle syll2">i</span><span id="c7639" class="consonne syll1">r</span><span id="c7640" class="sonmuet syll1">e</span></span> <span id="m1740" class="mot"><span id="c7641" class="voyelle syll2">é</span><span id="c7642" class="consonne syll1">t</span><span id="c7643" class="voyelle syll1">a</span><span id="c7644" class="voyelle syll1">i</span><span id="c7645" class="sonmuet syllmuet">t</span></span> <span id="m1741" class="mot"><span id="c7646" class="voyelle syll2">a</span><span id="c7647" class="consonne syll1">v</span><span id="c7648" class="voyelle syll1">e</span><span id="c7649" class="voyelle syll1">u</span><span id="c7650" class="consonne syll2">g</span><span id="c7651" class="consonne syll2">l</span><span id="c7652" class="voyelle syll2">a</span><span id="c7653" class="voyelle syll2">n</span><span id="c7654" class="sonmuet syllmuet">t</span></span></span></span> <span class="rhese"><span id="r5060" class="rhese2"><span id="m1742" class="mot"><span id="c7655" class="voyelle syll1">e</span><span id="c7656" class="voyelle syll1">t</span></span> <span id="m1743" class="mot"><span id="c7657" class="consonne syll2">s</span><span id="c7658" class="voyelle syll2">i</span></span> <span id="m1744" class="mot"><span id="c7659" class="consonne syll1">p</span><span id="c7660" class="consonne syll1">r</span><span id="c7661" class="voyelle syll1">o</span><span id="c7662" class="consonne syll2">c</span><span id="c7663" class="consonne syll2">h</span><span id="c7664" class="sonmuet syll2">e</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r5070" class="rhese1"><span id="m1745" class="mot"><span id="c7665" class="consonne syll1">s</span><span id="c7666" class="voyelle syll1">i</span></span> <span id="m1746" class="mot"><span id="c7667" class="consonne syll2">p</span><span id="c7668" class="consonne syll2">r</span><span id="c7669" class="voyelle syll2">o</span><span id="c7670" class="consonne syll1">c</span><span id="c7671" class="consonne syll1">h</span><span id="c7672" class="sonmuet syll1">e</span></span><span class="ponctuation">…</span></span></span> </span></p>
+<p id="p80" class="par_normal"><span id="ph229" class="phrase"> <span class="rhese"><span id="r5080" class="rhese2"><span id="m1747" class="mot"><span id="c7673" class="voyelle syll1">U</span><span id="c7674" class="voyelle syll1">n</span></span> <span id="m1748" class="mot"><span id="c7675" class="consonne syll2">v</span><span id="c7676" class="diphtongue syll2">o</span><span id="c7677" class="diphtongue syll2">i</span><span id="c7678" class="consonne syll1">l</span><span id="c7679" class="sonmuet syll1">e</span></span> <span id="m1749" class="mot"><span id="c7680" class="consonne syll2">n</span><span id="c7681" class="diphtongue syll2">o</span><span id="c7682" class="diphtongue syll2">i</span><span id="c7683" class="consonne syll2">r</span></span></span></span> <span class="rhese"><span id="r5090" class="rhese1"><span id="m1750" class="mot"><span id="c7684" class="consonne syll1">s</span><span class="caractere">’</span><span id="c7685" class="voyelle syll1">e</span><span id="c7686" class="consonne syll1">s</span><span id="c7687" class="consonne syll1">t</span></span> <span id="m1751" class="mot"><span id="c7688" class="consonne syll2">p</span><span id="c7689" class="voyelle syll2">o</span><span id="c7690" class="consonne syll1">s</span><span id="c7691" class="voyelle syll1">é</span></span> <span id="m1752" class="mot"><span id="c7692" class="consonne syll2">s</span><span id="c7693" class="voyelle syll2">u</span><span id="c7694" class="consonne syll2">r</span></span> <span id="m1753" class="mot pastille Enfant"><span id="c7695" class="consonne syll1">m</span><span id="c7696" class="diphtongue syll1">o</span><span id="c7697" class="diphtongue syll1">i</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r5100" class="rhese2"><span id="m1754" class="mot"><span id="c7698" class="consonne syll2">t</span><span id="c7699" class="voyelle syll2">o</span><span id="c7700" class="voyelle syll2">u</span><span id="c7701" class="sonmuet syllmuet">t</span></span> <span id="m1755" class="mot"><span id="c7702" class="consonne syll1">d</span><span id="c7703" class="voyelle syll1">o</span><span id="c7704" class="voyelle syll1">u</span><span id="c7705" class="consonne syll2">c</span><span id="c7706" class="voyelle syll2">e</span><span id="c7707" class="consonne syll1">m</span><span id="c7708" class="voyelle syll1">e</span><span id="c7709" class="voyelle syll1">n</span><span id="c7710" class="sonmuet syllmuet">t</span></span><span class="ponctuation">,</span></span></span> <span class="rhese"><span id="r5110" class="rhese1"><span id="m1756" class="mot"><span id="c7711" class="consonne syll2">c</span><span id="c7712" class="voyelle syll2">o</span><span id="c7713" class="consonne syll1">m</span><span id="c7714" class="consonne syll1">m</span><span id="c7715" class="sonmuet syll1">e</span></span> <span id="m1757" class="mot"><span id="c7716" class="consonne syll2">d</span><span id="c7717" class="voyelle syll2">u</span></span> <span id="m1758" class="mot"><span id="c7718" class="consonne syll1">c</span><span id="c7719" class="voyelle syll1">o</span><span id="c7720" class="consonne syll2">t</span><span id="c7721" class="voyelle syll2">o</span><span id="c7722" class="voyelle syll2">n</span></span><span class="ponctuation">.</span></span></span> </span></p>
+</div>
+	</div>
+</div>
+<div id="obj14140" class="SCPageObject SCText tirette numChap"   >
+	<div id="obj14140_content" class="SCTextContainer SCTextVAlignMiddle">
+<p style="text-align: center;"><span style="font-size: 20px;"><strong><span style="color: #ffffff;">6</span></strong></span></p>
+	</div>
+</div>
+<div id="obj14134" class="SCPageObject SCSmartObject tirette fond"   >
+	<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="570px" height="135px" viewBox="0 0 570 135" enable-background="new 0 0 570 135" xml:space="preserve">
+<g>
+	<path fill="#FCFCF9" d="M570,135V85.387c0,0,0-6-6-6H377.16c0,0-6,0-10.477-3.993L288.477,5.61c0,0-4.477-3.994-8.953,0
+		l-78.207,69.784c0,0-4.477,3.993-10.477,3.993H6c0,0-6,0-6,6V135H570z"/>
+	<line fill="none" stroke="#C6C7C8" stroke-miterlimit="10" x1="20.619" y1="128" x2="546.966" y2="128"/>
+</g>
+</svg>
+</div>
+<audio id="obj14148" class="SCPageObject SCSound" src="../audio/chap6.mp3"      >
+<p class="SCAudioFallback">Your Player does not support HTML audio</p>
+</audio>
+
+
+
+
+
+<!-- PAGE OBJECTS: END -->
+<!-- CUSTOM CONTENT: START -->		
+				
+<!-- CUSTOM CONTENT: END -->
+			</div>
+<!-- SMIL: START DIV -->
+			<div id="SCFirstFakeReadAloudDiv">
+				<span id="SCFirstFakeReadAloud"></span>
+			</div>
+<!-- SMIL: STOP DIV -->
+		</div>
+		
+    </body>
+ </html>

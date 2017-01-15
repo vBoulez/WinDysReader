@@ -1,0 +1,443 @@
+/*****************************************************************************\
+                                   Variables
+*******************************************************************************
+
+$bodyWidth: 768px;
+$bodyHeight: 1024px;
+$chapAreaWidth: 570px;
+$chapHeaderHeight: 135px;
+$textAreaHeight: $bodyHeight - $chapHeaderHeight; -> 944px
+$textAreaLineHeight: 2em;
+$textMargin: 60px;
+$popupLeft: -($bodyWidth - $chapAreaWidth) / 2; -> -99px
+
+\*****************************************************************************/
+
+/*@font-face {
+    src: url(../Fonts/OpenDyslexic-Regular.ttf);
+    font-family: "OpenDyslexic-Regular";
+}
+
+@font-face {
+    src: url(../Fonts/TimesNewRoman.ttf);
+    font-family: "TimesNewRoman";
+}*/
+
+/* tmp */
+#DEBUG_pointer { display: none; width: 31px; height: 31px; position: absolute; top: 0; left: 0; margin-top: -15px; margin-left: -15px; }
+#DEBUG_pointer::before, #DEBUG_pointer::after { content: ""; position: absolute; top: 0; left: 0; background-color: rgba(255,0,0,0.7); }
+#DEBUG_pointer::before { top: 15px; width: 31px; height: 1px; transform: rotate(45deg); }
+#DEBUG_pointer::after { left: 15px; height: 31px; width: 1px; transform: rotate(45deg); }
+#DEBUG_pointer > div { position: absolute; top: 15px; left: 15px; background-color: rgba(50,50,50,0.2); max-height: 1024px; overflow: auto; }
+#DEBUG_pointer p { padding: 0 10px; margin-bottom: 5px; }
+
+#version { position: absolute; bottom: 20px; left: 20px; color: white; font-size: 1.2em; font-weight: bold; }
+#version::before { content: "v2"; }
+
+#tools { display: none; /* position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: rgba(0,0,0,0.2); */ }
+#tools > ul { position: absolute; top: 30px; right: 0; background-color: white; border: 1px solid black;
+              padding: 10px; margin: 10px; z-index: 2; /* iBooks scrollbar bug */
+              -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+#tools li { list-style: none; font-size: 20px; padding: 10px 0;}
+#tools span { cursor: pointer; }
+#tools span.active { border: 1px solid black; }
+#tools span.disabled { color: lightgrey; cursor: default; }
+/* tmp */
+
+img.background { position: absolute; top: 0; left: 0; }
+/*img { max-width: 100%; max-height: 100%; }*/
+
+body {
+    /* Configurable values */
+    width: 768px; /* $bodyWidth */
+    height: 1024px; /* $bodyHeight */
+    /* Required values */
+    margin: 0;
+    touch-action: none;
+}
+
+#mobidys {
+    /* Configurable values */
+    width: 768px; /* $bodyWidth */
+    height: 1024px; /* $bodyHeight */
+    font-size: 18px;
+    /* Required values */
+    overflow: hidden;
+    position: relative;
+}
+
+div#chapArea {
+    /* Configurable values */
+    width: 570px; /* $chapAreaWidth */
+    font-family: Arial;
+    /* Required values */
+    top: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    cursor: default;
+    z-index: 99999;
+}
+
+div#chapHeader {
+    /* Configurable values */
+    height: 135px; /* $chapHeaderHeight */
+    padding-top: 19px;
+    /* Required values */
+    box-sizing: border-box;
+    position: relative;
+}
+
+div#chapHeader div {
+    /* Required values */
+    position: absolute;
+    /*width: 100%;*/
+    text-align: center;
+}
+div#chapHeader div.numChap {
+    position: relative;
+    margin: auto;
+    margin-top: 6px;
+}
+
+div#textArea {
+    /* Configurable values */
+/* (a bug on ReadiumSDK makes it necessary to
+have the percentage and not the pre-calculated
+value in px to make the scroll work) */
+    max-height: calc(100% - 135px); /* $textAreaHeight = 100% - $chapHeaderHeight*/ 
+    
+    font-family: Arial;
+    /*background-color: #FFFAF0;*/
+    /* Required values */
+    position: relative;
+    /* Add these to enable native scrollbars */
+    /* overflow-x: hidden; */
+    /* overflow-y: auto; */
+}
+div#textArea .textContainer {
+	line-height: 2em; /* $textAreaLineHeight */
+}
+
+/* Custom scrollbars */
+.ps-container > .ps-scrollbar-x-rail,
+.ps-container > .ps-scrollbar-y-rail,
+.ps-container:hover > .ps-scrollbar-x-rail,
+.ps-container:hover > .ps-scrollbar-y-rail {
+    opacity: 0.8;
+}
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y,
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+    width: 8px;
+}
+
+div#textArea > div.textContainer {
+    /* Required values */
+    position: relative;
+    -moz-user-select: none; -webkit-user-select: none;
+    -ms-user-select: none; user-select: none;
+}
+
+div.textContainer > .textSrc {
+    /* Configurable values */
+    padding: 2em 60px; /* $textAreaLineHeight $textMargin */
+    /* Required values */
+    position: relative;
+}
+div.textContainer.optionSpaces > .textSrc {
+    padding: 2.5em 60px;
+}
+
+p {
+    /* Configurable values */
+    margin-bottom: 2em; /* $textAreaLineHeight */
+    text-align: justify;
+    /* Required values */
+    margin-top: 0;
+}
+div.textContainer.optionSpaces p {
+	margin-bottom: 2.5em;
+}
+div#chapHeader div p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+.showMenu {
+    /* Configurable values */
+    width: 60px; /* $textMargin */
+    height: 100%;
+    background-color: rgba(170,220,255,0.2);
+    top: 0;
+    /* Required values */
+    position: absolute;
+}
+
+.showMenu.left {
+    left: 0;
+}
+.showMenu.right {
+    right: 0;
+}
+.showMenu:active {
+    background-color: rgba(170,220,255,0.5);
+}
+
+#textShadow {
+    /* Configurable values */
+    height: 2em; /* $textAreaLineHeight */
+    background-image: linear-gradient(rgba(251,251,248,0.5) 0%, rgba(251,251,248,0.6) 30%, rgba(251,251,248,1) 65%);
+    /* Required values */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.optionContrast #textShadow {
+    background-image: linear-gradient(rgba(15,30,0,0.5) 0%, rgba(15,30,0,0.6) 30%, rgba(15,30,0,1) 65%);
+}
+.optionReadingWindow #textShadow {
+    background-image: linear-gradient(rgba(165,165,165,0.5) 0%, rgba(165,165,165,0.6) 30%, rgba(165,165,165,1) 65%);
+}
+
+/* Mode pagination */
+#pageNumbers {
+    /* Configurable values */
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(220,220,220,0.7);
+    /* Required values */
+    position: absolute;
+    display: none;
+}
+
+#textArea.optionPagination {
+    overflow: hidden;
+}
+.optionPagination .textContainer {
+    width: 100%; /* -> force redraw to hide scrollbar */
+}
+
+
+/* Marque-ligne */
+#textMark {
+    /* Configurable values */
+    top: 4em; /* initial line */
+    border-bottom: 0.3em solid #F4E500;
+    margin-top: -0.2em;
+    width: 100%;
+    /* Required values */
+    position: absolute;
+    display: none;
+    z-index: 9;
+}
+
+#textMark::before,
+#textMark::after {
+    /*content: "";*/
+    content: url("marqueLigne.svg");
+    display: block;
+    position: absolute;
+    height: 45px;
+    width: 30px;
+    top: 0;
+}
+#textMark::before {
+    left: 0;
+}
+#textMark::after {
+    right: 0;
+}
+
+
+/* Contraste */
+.optionContrast #chapHeader .tirette svg path { fill: rgb(15, 30, 0); }
+.optionContrast #chapHeader > div { color: #7D7D7D; }
+.optionContrast #textArea {
+    background-color: #0F1E00;
+    color: #FFFAF0;
+}
+
+
+/* Espacement des caractères */
+div#textArea .textContainer.optionSpaces {
+    word-spacing: 0.2em;
+    letter-spacing: 0.2em;
+    line-height:2.5em;
+}
+
+.optionSpaces p { text-align: left; }
+
+.optionSpaces span.rhese {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Lignes colorée en alternance */
+div.textContainer > .textBackground {
+    /* Required values */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.line {
+    height: 2em; /* $textAreaLineHeight */
+    margin-bottom: 2em; /* $textAreaLineHeight */
+}
+div#textArea .textContainer.optionSpaces .line {
+	height: 2.5em; /* $textAreaLineHeight */
+    margin-bottom: 2.5em; /* $textAreaLineHeight */
+}
+.line:last-child {
+    margin-bottom: 0;
+}
+
+.optionStripes .line { background-color: rgb(243,238,232); }
+.optionContrast .optionStripes .line { background-color: rgb(45,45,0); }
+
+/* Coloration des rhèses en alternance */
+.optionPhrases span.rhese1 { background-color: #F3EEE8; }
+.optionPhrases span.rhese2 { background-color: #E4DED8; }
+.optionContrast .optionPhrases span.rhese1 { background-color: #2D2D00; }
+.optionContrast .optionPhrases span.rhese2 { background-color: #505000; }
+
+
+/* Coloration des syllabes */
+.optionColorSyllables .syll1 { color: #DC0000; }
+.optionColorSyllables .syll2 { color: #0000C8; }
+.optionColorSyllables .syllmuet { color: #A0A0A0; }
+.optionContrast .optionColorSyllables .syll1 { color: #FFC264; }
+.optionContrast .optionColorSyllables .syll2 { color: #64C8FF; }
+.optionContrast .optionColorSyllables .syllmuet { color: #969696; }
+
+
+/* Coloration des phonèmes */
+.optionColorPhonemes .voyelle { color: #DC0000; }
+.optionColorPhonemes .consonne { color: #0000C8; }
+.optionColorPhonemes .sonmuet { color: #A0A0A0; }
+.optionColorPhonemes .diphtongue { color: #C846FF; }
+.optionContrast .optionColorPhonemes .voyelle { color: #FFC264; }
+.optionContrast .optionColorPhonemes .consonne { color: #64C8FF; }
+.optionContrast .optionColorPhonemes .sonmuet { color: #969696; }
+.optionContrast .optionColorPhonemes .diphtongue { color: #C378A0; }
+
+
+/* Coloration de la ponctuation */
+.optionColorPunctuation .ponctuation {
+    color: #C80000;
+    font-weight: bold;
+}
+.optionContrast .optionColorPunctuation .ponctuation {
+    color: #FF4B4B;
+}
+
+
+/* Définitions et personnages */
+#popups {
+    /* Configurable values */
+    /* height: 100%; */
+    /* background-color: rgba(0,0,0,0.1); */
+    /* Required values */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -99px; /* $popupLeft */
+    width: 768px; /* $bodyWidth */
+    z-index: 99;
+}
+
+.popup {
+    max-width: 200px;
+    cursor: pointer;
+    /* Required values */
+    position: absolute;
+}
+
+.popup-def {
+    /* Configurable values */
+    padding: 5px 15px;
+    box-shadow: 5px 5px 10px 0px #656565;
+    border-radius: 15px;
+    color: #3C3C3C;
+    line-height: normal;
+    text-align: left;
+    background: #D7D7D7;
+    white-space: initial;
+    word-spacing: initial;
+    letter-spacing: initial;
+    /* Required values */
+    display: none;
+}
+.optionContrast .popup-def {
+    color: #F3EEE8;
+    background: #646464;
+}
+
+.pastille-img {
+    /* Configurable values */
+    max-width: 141px;
+    height: 100px;
+    /* Required values */
+    display: none;
+}
+
+.optionDefinitions .definition,
+.optionDefinitions .pastille {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+/* Soutien audio et Lecture audio */
+.optionAudioSupport .rhese1,
+.optionAudioSupport .rhese2,
+.optionAudioPlayback .rhese1,
+.optionAudioPlayback .rhese2 {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+.optionAudioSupport .highlight,
+.optionAudioPlayback .highlight {
+    background-color: #F3EEE8;
+}
+.optionContrast .optionAudioSupport .highlight,
+.optionContrast .optionAudioPlayback .highlight {
+    background-color: #505000;
+}
+
+
+/* Fenêtre de lecture */
+.optionReadingWindow #chapHeader .tirette svg path { fill: #A5A5A5; }
+.optionReadingWindow #chapHeader .menu-tirette svg path { fill: #C6C7C8; }
+#chapArea.optionReadingWindow #textArea {
+    background-color: #A5A5A5;
+    color: #7D7D7D;
+}
+
+.optionReadingWindow .rhese1:not(.highlight) .syll1,
+.optionReadingWindow .rhese2:not(.highlight) .syll1,
+.optionReadingWindow .rhese1:not(.highlight) .syll2,
+.optionReadingWindow .rhese2:not(.highlight) .syll2,
+.optionReadingWindow .rhese1:not(.highlight) .syllmuet,
+.optionReadingWindow .rhese2:not(.highlight) .syllmuet,
+.optionReadingWindow .rhese1:not(.highlight) .ponctuation,
+.optionReadingWindow .rhese2:not(.highlight) .ponctuation {
+    color: #7D7D7D;
+}
+
+.optionReadingWindow .highlight {
+    background-color: #FFFAF0;
+    color: black;
+}
