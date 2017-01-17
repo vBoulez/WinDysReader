@@ -320,7 +320,7 @@ define(['./ModuleConfig', 'hgn!readium_js_viewer_html_templates/settings-dialog.
             });
         };
 
-        Keyboard.on(Keyboard.NightTheme, 'settings', function(){
+        /*Keyboard.on(Keyboard.NightTheme, 'settings', function(){
 
                 Settings.get('reader', function(json)
                 {
@@ -337,16 +337,16 @@ define(['./ModuleConfig', 'hgn!readium_js_viewer_html_templates/settings-dialog.
 
                     if (reader) updateReader(reader, json);
                 });
-        });
+        });*/
 
-        Keyboard.on(Keyboard.SettingsModalSave, 'settings', function() {
+        /*Keyboard.on(Keyboard.SettingsModalSave, 'settings', function() {
             save();
             $('#settings-dialog').modal('hide');
-        });
+        });*/
 
-        Keyboard.on(Keyboard.SettingsModalClose, 'settings', function() {
+        /*Keyboard.on(Keyboard.SettingsModalClose, 'settings', function() {
             $('#settings-dialog').modal('hide');
-        });
+        });*/
 
         $('#settings-dialog .btn-primary').on('click', save);
     }

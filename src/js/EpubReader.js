@@ -827,7 +827,7 @@ BookmarkData){
             if (document.activeElement) document.activeElement.blur();
         };
         $("#buttHideToolBar").on("click", hideTB);
-        Keyboard.on(Keyboard.ToolbarHide, 'reader', hideTB);
+        //Keyboard.on(Keyboard.ToolbarHide, 'reader', hideTB);
 
         var showTB = function(){
             $("#aboutButt1")[0].focus();
@@ -835,15 +835,15 @@ BookmarkData){
             setTimeout(function(){ $("#aboutButt1")[0].focus(); }, 50);
         };
         $("#buttShowToolBar").on("click", showTB);
-        Keyboard.on(Keyboard.ToolbarShow, 'reader', showTB);
+        //Keyboard.on(Keyboard.ToolbarShow, 'reader', showTB);
 
         Keyboard.on(Keyboard.PagePrevious, 'reader', function(){
             if (!isWithinForbiddenNavKeysArea()) prevPage();
         });
 
-        Keyboard.on(Keyboard.PagePreviousAlt, 'reader', prevPage);
+        //Keyboard.on(Keyboard.PagePreviousAlt, 'reader', prevPage);
 
-        Keyboard.on(Keyboard.PageNextAlt, 'reader', nextPage);
+        //Keyboard.on(Keyboard.PageNextAlt, 'reader', nextPage);
 
         Keyboard.on(Keyboard.PageNext, 'reader', function(){
             if (!isWithinForbiddenNavKeysArea()) nextPage();
@@ -865,7 +865,7 @@ BookmarkData){
             //$(window).trigger('loadlibrary');
         };
 
-        Keyboard.on(Keyboard.SwitchToLibrary, 'reader', loadlibrary /* function(){setTimeout(, 30);} */ );
+        //Keyboard.on(Keyboard.SwitchToLibrary, 'reader', loadlibrary /* function(){setTimeout(, 30);} */ );
 
         $('.icon-library').on('click', function(){
             loadlibrary();
@@ -879,7 +879,7 @@ BookmarkData){
             }
         });
 
-        Keyboard.on(Keyboard.TocShowHideToggle, 'reader', function()
+        /*Keyboard.on(Keyboard.TocShowHideToggle, 'reader', function()
         {
             var visible = $('#app-container').hasClass('toc-visible');
             if (!visible)
@@ -890,7 +890,7 @@ BookmarkData){
             {
                 setTimeout(function(){ $('#readium-toc-body button.close')[0].focus(); }, 100);
             }
-        });
+        });*/
 
         $('.icon-toc').on('click', tocShowHideToggle);
 
@@ -900,7 +900,7 @@ BookmarkData){
             $('#readium-toc-body').height(appHeight);
         };
 
-        Keyboard.on(Keyboard.ShowSettingsModal, 'reader', function(){$('#settings-dialog').modal("show")});
+        //Keyboard.on(Keyboard.ShowSettingsModal, 'reader', function(){$('#settings-dialog').modal("show")});
 
         $('#app-navbar').on('mousemove', hideLoop);
         
@@ -1227,8 +1227,8 @@ BookmarkData){
                     });
                 }
             };
-            $("#buttNightTheme").on("click", toggleNightTheme);
-            Keyboard.on(Keyboard.NightTheme, 'reader', toggleNightTheme);
+            //$("#buttNightTheme").on("click", toggleNightTheme);
+            //Keyboard.on(Keyboard.NightTheme, 'reader', toggleNightTheme);
 
             readium.reader.on(ReadiumSDK.Events.CONTENT_DOCUMENT_LOAD_START, function($iframe, spineItem) {
                 Globals.logEvent("CONTENT_DOCUMENT_LOAD_START", "ON", "EpubReader.js [ " + spineItem.href + " ]");

@@ -617,7 +617,7 @@ Helpers){
             libraryManager.retrieveAvailableEpubs(loadLibraryItems);
         }, showError);
 
-        Keyboard.on(Keyboard.ShowSettingsModal, 'library', function(){$('#settings-dialog').modal("show");});
+        //Keyboard.on(Keyboard.ShowSettingsModal, 'library', function(){$('#settings-dialog').modal("show");});
 
         $(window).trigger('libraryUIReady');
         $(window).on('resize', setItemHeight);

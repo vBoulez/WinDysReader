@@ -314,7 +314,7 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             }
         });
 
-        Keyboard.on(Keyboard.MediaOverlaysEscape, 'reader', readium.reader.escapeMediaOverlay);
+        //Keyboard.on(Keyboard.MediaOverlaysEscape, 'reader', readium.reader.escapeMediaOverlay);
 
         var $escAudioBtn = $("#btn-esc-audio");
         $escAudioBtn.on("click", readium.reader.escapeMediaOverlay);
@@ -322,7 +322,7 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
         var $previousAudioBtn = $("#btn-previous-audio");
         var $nextAudioBtn = $("#btn-next-audio");
 
-        Keyboard.on(Keyboard.MediaOverlaysPlayPause, 'reader', readium.reader.toggleMediaOverlay);
+        //Keyboard.on(Keyboard.MediaOverlaysPlayPause, 'reader', readium.reader.toggleMediaOverlay);
         //Keyboard.on(Keyboard.MediaOverlaysPlayPauseAlt, 'reader', readium.reader.toggleMediaOverlay);
 
         var $playAudioBtn = $("#btn-play-audio");
@@ -372,7 +372,7 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             }
         };
 
-        Keyboard.on(Keyboard.MediaOverlaysAdvancedPanelShowHide, 'reader', function(){
+        /*Keyboard.on(Keyboard.MediaOverlaysAdvancedPanelShowHide, 'reader', function(){
             var toFocus = undefined;
             if ($audioPlayer.hasClass('expanded-audio'))
             {
@@ -387,7 +387,7 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
 
             $(document.body).removeClass('hide-ui');
             setTimeout(function(){ toFocus.focus(); }, 50);
-        });
+        });*/
 
         $expandAudioBtn.on("click", function() {
             var wasFocused = document.activeElement === $expandAudioBtn[0];
@@ -783,19 +783,19 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             changeRate(false);
             //setTimeout(function(){ $changeRateControl[0].focus(); }, 50);
         });
-        Keyboard.on(Keyboard.MediaOverlaysRateIncrease, 'reader', function(){
+        /*Keyboard.on(Keyboard.MediaOverlaysRateIncrease, 'reader', function(){
             changeRate(false);
             //setTimeout(function(){ $changeRateControl[0].focus(); }, 50);
-        });
+        });*/
 
         $("#buttRateMinus").on("click", function(){
             changeRate(true);
             //setTimeout(function(){ $changeRateControl[0].focus(); }, 50);
         });
-        Keyboard.on(Keyboard.MediaOverlaysRateDecrease, 'reader', function(){
+        /*Keyboard.on(Keyboard.MediaOverlaysRateDecrease, 'reader', function(){
             changeRate(true);
             //setTimeout(function(){ $changeRateControl[0].focus(); }, 50);
-        });
+        });*/
 
         // Keyboard.on(Keyboard.MediaOverlaysRateIncreaseAlt, 'reader', function(){
         //     changeRate(false);
@@ -836,7 +836,7 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             });
         };
 
-        Keyboard.on(Keyboard.MediaOverlaysRateReset, 'reader', resetRate);
+        //Keyboard.on(Keyboard.MediaOverlaysRateReset, 'reader', resetRate);
 
         var $rateButton = $('#btn-audio-rate');
         $rateButton.on("click", resetRate);
@@ -873,19 +873,19 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             changeVolume(false);
             //setTimeout(function(){ $changeVolumeControl[0].focus(); }, 50);
         });
-        Keyboard.on(Keyboard.MediaOverlaysVolumeIncrease, 'reader', function(){
+        /*Keyboard.on(Keyboard.MediaOverlaysVolumeIncrease, 'reader', function(){
             changeVolume(false);
             //setTimeout(function(){ $changeVolumeControl[0].focus(); }, 50);
-        });
+        });*/
 
         $("#buttVolumeMinus").on("click", function(){
             changeVolume(true);
             //setTimeout(function(){ $changeVolumeControl[0].focus(); }, 50);
         });
-        Keyboard.on(Keyboard.MediaOverlaysVolumeDecrease, 'reader', function(){
+        /*Keyboard.on(Keyboard.MediaOverlaysVolumeDecrease, 'reader', function(){
             changeVolume(true);
             //setTimeout(function(){ $changeVolumeControl[0].focus(); }, 50);
-        });
+        });*/
 
         // Keyboard.on(Keyboard.MediaOverlaysVolumeIncreaseAlt, 'reader', function(){
         //     changeVolume(false);
@@ -961,9 +961,9 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             $audioPlayer.removeClass('no-volume');
         };
 
-        Keyboard.on(Keyboard.MediaOverlaysVolumeMuteToggle, 'reader', function(){
+        /*Keyboard.on(Keyboard.MediaOverlaysVolumeMuteToggle, 'reader', function(){
             ($audioPlayer.hasClass('no-volume') ? unMuteVolume : muteVolume)();
-        });
+        });*/
 
         $volumeButtonMute.on("click", function() {
 
@@ -983,11 +983,11 @@ define(['readium_shared_js/globals', 'module','jquery', 'underscore', 'bootstrap
             if (wasFocused) setTimeout(function(){ $volumeButtonMute[0].focus(); }, 50);
         });
 
-        Keyboard.on(Keyboard.MediaOverlaysPrevious, 'reader', readium.reader.previousMediaOverlay);
+        //Keyboard.on(Keyboard.MediaOverlaysPrevious, 'reader', readium.reader.previousMediaOverlay);
 
         $previousAudioBtn.on("click", readium.reader.previousMediaOverlay);
 
-        Keyboard.on(Keyboard.MediaOverlaysNext, 'reader', readium.reader.nextMediaOverlay);
+        //Keyboard.on(Keyboard.MediaOverlaysNext, 'reader', readium.reader.nextMediaOverlay);
 
         $nextAudioBtn.on("click", readium.reader.nextMediaOverlay);
     };

@@ -1,8 +1,9 @@
 <div class="btn-group navbar-left">
         <!-- <button type="button" class="btn btn-default icon icon-show-hide"></button>  -->
-    <button id="aboutButt1" tabindex="1" type="button" class="btn icon-logo" data-toggle="modal" data-target="#about-dialog" title="{{strings.about}}" aria-label="{{strings.about}}">
+    <!--<button id="aboutButt1" tabindex="1" type="button" class="btn icon-logo" data-toggle="modal" data-target="#about-dialog" title="{{strings.about}}" aria-label="{{strings.about}}">
         <span class="icon-readium" aria-hidden="true"></span>
-    </button>
+    </button>-->
+    <button id="aboutButt1" tabindex="1" type="button" class="btn icon-logo-mobidys" data-toggle="modal"  title="MOBiDYS" aria-label="MOBiDYS"></button>
     
     <button id="buttShowToolBar" style="opacity:0;visibility:hidden;border:0;outline:0;padding:0;margin:0;width:1px;height=1px;" tabindex="-1" aria-hidden="true" type="button" title="access key {{keyboard.ToolbarShow}}" aria-label="access key {{keyboard.ToolbarShow}}" accesskey="{{keyboard.accesskeys.ToolbarShow}}"> </button>
     
@@ -191,9 +192,9 @@
     <div class="zoom-wrapper dropdown" style="display:none">
         <a tabindex="1" href="#" data-toggle="dropdown"><input tabindex="1" type="text" value="100%" disabled/><span class="caret"></span></a>
         <ul id="zoom-menu" class="dropdown-menu" role="menu">
-            <li id="zoom-custom"><a href="#" tabindex="1">Custom <span class="glyphicon glyphicon-ok"></span></a></li>
-            <li id="zoom-fit-width"><a href="#" tabindex="1">Fit Width <span class="glyphicon glyphicon-ok"></span></a></li>
-            <li id="zoom-fit-screen" class="active-zoom"><a href="#" tabindex="1">Fit Screen <span class="glyphicon glyphicon-ok"></span></a></li>
+            <li id="zoom-custom"><a href="#" tabindex="1">Entrez la taille <span class="glyphicon glyphicon-ok"></span></a></li>
+            <li id="zoom-fit-width"><a href="#" tabindex="1">Zoomer <span class="glyphicon glyphicon-ok"></span></a></li>
+            <li id="zoom-fit-screen" class="active-zoom"><a href="#" tabindex="1">Taille Standard <span class="glyphicon glyphicon-ok"></span></a></li>
         </ul>
     </div>
     <button tabindex="1" type="button" class="btn icon-library" title="{{strings.view_library}} [{{keyboard.SwitchToLibrary}}]" aria-label="{{strings.view_library}} [{{keyboard.SwitchToLibrary}}]" accesskey="{{keyboard.accesskeys.SwitchToLibrary}}">
@@ -202,9 +203,9 @@
     <button tabindex="1" type="button" class="btn icon-annotations" title="{{strings.highlight_selection}}" aria-label="{{strings.highlight_selection}}">
         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </button>
-    <button tabindex="1" type="button" class="btn icon-shareUrl" title="{{strings.share_url}}" aria-label="{{strings.share_url}}">
+    <!--<button tabindex="1" type="button" class="btn icon-shareUrl" title="{{strings.share_url}}" aria-label="{{strings.share_url}}">
         <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-    </button>
+    </button>-->
     <button id="tocButt" tabindex="1" type="button" class="btn icon-toc" title="{{strings.toc}} [{{keyboard.TocShowHideToggle}}]" aria-label="{{strings.toc}} [{{keyboard.TocShowHideToggle}}]" accesskey="{{keyboard.accesskeys.TocShowHideToggle}}">
         <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
     </button>
@@ -215,6 +216,9 @@
     <button tabindex="1" id="buttFullScreenToggle" type="button" class="btn icon-full-screen" title="{{strings.enter_fullscreen}} [{{keyboard.FullScreenToggle}}]" aria-label="{{strings.enter_fullscreen}} [{{keyboard.FullScreenToggle}}]" accesskey="{{keyboard.accesskeys.FullScreenToggle}}">
         <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
     </button>
+    <!--<button tabindex="1" id="buttFullScreenToggle" type="button" class="btn icon-small-screen" title="{{strings.exit_fullscreen}} [{{keyboard.FullScreenToggle}}]" aria-label="{{strings.exit_fullscreen}} [{{keyboard.FullScreenToggle}}]" accesskey="{{keyboard.accesskeys.FullScreenToggle}}">
+        <span class="glyphicon glyphicon-resize-small" aria-hidden="true"></span>
+    </button>-->
     
     <!-- <button type="button" class="btn btn-default icon icon-bookmark"></button>-->
 </div>

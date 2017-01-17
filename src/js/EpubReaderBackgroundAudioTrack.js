@@ -44,13 +44,13 @@ define(['module','jquery', 'bootstrap', 'readium_js/Readium', './Spinner', 'Sett
         );
 
 
-        Keyboard.on(Keyboard.BackgroundAudioPlayPause, 'reader', function()
+        /*Keyboard.on(Keyboard.BackgroundAudioPlayPause, 'reader', function()
         {
             var play = !$audioTrackDiv.hasClass('isPlaying');
 
             readium.reader.backgroundAudioTrackManager.setPlayState(play);
             readium.reader.backgroundAudioTrackManager.playPause(play);
-        });
+        });*/
 
         $playAudioTrackBtn.on("click", function ()
         {

@@ -2,6 +2,21 @@
   "chrome_extension_name": {
     "message": "Readium"
   },
+  "about" : {
+    "message" : "À propos"
+  },
+  "view_library": {
+    "message" : "Bibliothèque"
+  },
+  "enter_fullscreen" : {
+    "message" : "Plein Ecran"
+  },
+  "exit_fullscreen" : {
+    "message" : "Quitter Plein Ecran"
+  },
+  "settings" : {
+    "message" : "Paramètres"
+  },
   "chrome_extension_description": {
     "message": "Un lecteur de livres numériques EPUB3."
   },
@@ -257,6 +272,8 @@
   "i18n_page_next" : {
     "message" : "Page suivante"
   },
+  
+  
   "chrome_accept_languages": {
     "message": "$CHROME$ accepts $languages$ languages",
     "placeholders": {

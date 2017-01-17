@@ -164,8 +164,14 @@ html[data-theme=night-theme] .modal
   background-image: url('../images/glyphicons_136_cogwheel.png');
 }*/
 
-.navbar .icon-logo, .navbar .icon-logo:active{
-  background-image: url('../images/readium_logo.png');
+.navbar .icon-logo-readium, .navbar .icon-logo:active{
+  background-image: url('../images/readium_favicon.png');
+  width: 50px; 
+  background-size: auto 16px !important;
+}
+
+.navbar .icon-logo-mobidys, .navbar .icon-logo:active{
+  background-image: url('../images/mobidys_logo.png');
   width: 130px; 
   background-size: auto 28px !important;
 }
