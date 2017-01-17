@@ -187,7 +187,7 @@ define(['jquery', './EpubLibrary', './EpubReader', 'readium_shared_js/helpers', 
     
     
     
-    if (window.File
+    /*if (window.File
          //&& window.FileReader
      ) {
         var fileDragNDropHTMLArea = $(document.body);
@@ -256,7 +256,7 @@ define(['jquery', './EpubLibrary', './EpubReader', 'readium_shared_js/helpers', 
 
             }
         });
-    }
+    }*/
 
     $(initialLoad);
 });
